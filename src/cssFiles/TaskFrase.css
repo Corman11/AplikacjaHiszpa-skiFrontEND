@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;   /* układ pionowy */
+  align-items: flex-start;  /* do lewej */
+  gap: 40px;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+/* Pojedynczy zestaw: etykieta + kwadrat */
+.boxWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Tekst nad kwadratem */
+.label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Sam kwadrat */
+.box {
+  width: 150px;
+  height: 150px;
+  background-color: #f2f2f2;
+  border: 3px solid #555;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+/* Efekt hover */
+.box:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: x-large;
+    font-family:
+    'Trebuchet MS', 'Lucida Sans Unicode',
+    'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.dragdiv {
+    padding: 8rem;
+    color: blueviolet;
+    cursor: grabbing;
+    font-size: medium;
+    font-weight: 600;
+    font-family:
+        'Trebuchet MS', 'Lucida Sans Unicode',
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
