@@ -1,20 +1,4 @@
-.container {
-  display: flex;
-  flex-direction: column;   /* układ pionowy */
-  align-items: flex-start;  /* do lewej */
-  gap: 40px;
-  margin-top: 40px;
-  padding: 20px;
-}
-
-/* Pojedynczy zestaw: etykieta + kwadrat */
-.boxWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Tekst nad kwadratem */
+/* Styl etykiety nad kwadratem — większa czcionka, pogrubienie, odstęp */
 .label {
   font-size: 18px;
   font-weight: bold;
@@ -22,45 +6,115 @@
   color: #333;
 }
 
-/* Sam kwadrat */
+/* Podstawowy wygląd dużego kwadratu: rozmiar, kolor, ramka, zaokrąglenie */
 .box {
-  width: 150px;
-  height: 150px;
+  width: 600px;
+  height: 300px;
   background-color: #f2f2f2;
   border: 3px solid #555;
   border-radius: 12px;
   transition: 0.3s;
 }
 
-/* Efekt hover */
+/* Efekt po najechaniu na duży kwadrat: lekkie powiększenie i zmiana koloru */
 .box:hover {
   background-color: #ddd;
   transform: scale(1.05);
   cursor: pointer;
 }
 
+/* Tło całej strony */
 body {
-    background-color: antiquewhite;
+  background-color: antiquewhite;
 }
 
+/* Główny wrapper do centrowania treści w pionie i poziomie */
 .wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: x-large;
-    font-family:
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* ułożenie elementów pionowo */
+  align-items: center;    /* centrowanie poziome */
+  font-size: x-large;
+  font-family:
     'Trebuchet MS', 'Lucida Sans Unicode',
     'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/* Styl dla elementu przeciąganego — duże padding, kolor, zmiana kursora */
 .dragdiv {
-    padding: 8rem;
-    color: blueviolet;
-    cursor: grabbing;
-    font-size: medium;
-    font-weight: 600;
-    font-family:
-        'Trebuchet MS', 'Lucida Sans Unicode',
-        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 8rem;
+  color: blueviolet;
+  cursor: grabbing;
+  font-size: medium;
+  font-weight: 600;
+  font-family:
+    'Trebuchet MS', 'Lucida Sans Unicode',
+    'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+/* Kontener na klocki z odpowiedziami — prawa kolumna */
+.containerAnswer {
+  display: flex;
+  flex-direction: column; /* układ pionowy */
+  align-items: flex-end;  /* ustawienie przy prawej krawędzi */
+  gap: 80px;              /* odstępy między klockami */
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* układ pionowy */
+  align-items: flex-end;  /* ustawienie przy prawej krawędzi */
+  gap: 80px;              /* odstępy między klockami */
+  margin-top: 40px;
+  padding: 20px;
+}
+
+
+/* Pojedynczy klocek odpowiedzi — wygląd */
+.boxAnswer {
+  width: 150px;
+  height: 75px;           /* mniejsza wysokość niż duży kwadrat */
+  text-decoration-color: #333;
+  background-color: #f2f2f2;
+  border: 3px solid #555;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+/* Wrapper pojedynczego klocka odpowiedzi — etykieta + klocek */
+.boxAnswerWrapper {
+  display: flex;
+  flex-direction: column; /* pionowo */
+  align-items: center;    /* wyśrodkuj poziomo */
+}
+
+/* Powtórzony styl boxAnswer — właściwie niepotrzebny, ale nie szkodzi */
+.boxAnswer {
+  width: 150px;
+  height: 75px;
+  background-color: #f2f2f2;
+  border: 3px solid #555;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+/* Efekt hover dla odpowiedzi — jak w dużych kwadratach */
+.boxAnswer:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Układ dwóch kolumn: lewa i prawa, w jednym rzędzie */
+.layout {
+  display: flex;              /* ustaw obie kolumny obok siebie */
+  justify-content: space-between; /* maksymalny rozstaw */
+  align-items: flex-start;        /* wyrównanie obu kolumn do góry */
+  width: 100%;                    /* pełna szerokość */
+}
+
+
+
+/*Przycisk do sprawdzania odpowiedzi*/

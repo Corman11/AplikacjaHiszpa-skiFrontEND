@@ -16,7 +16,7 @@ function Layout() {
   return (
     <>
       <div className="top-line"></div>
-      <FlagImage />
+      
       
       {/* STRONY BĘDĄ WSTAWIANE TUTAJ */}
       <Outlet />
@@ -35,6 +35,7 @@ function MainPage() {
 
   return (
     <div className="center">
+      <FlagImage />
       <h1 className='Map'>Apka Profe Beata</h1>
 
       <ul className="text">
