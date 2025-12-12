@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import './cssFiles/style.css'
 import SpanishFlag from './images/Spanish_Flag.png'
@@ -6,22 +5,18 @@ import TaskFrase from './pages/TaskFrase';
 import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
 
 function FlagImage() {
-  return(
-
+  return (
     <div className='b'>
-      <img src={SpanishFlag} alt="flaga" style={{ width: '400px', }}/>
+      <img src={SpanishFlag} alt="flaga" style={{ width: '400px' }}/>
     </div>
-  )
-
-
+  );
 }
-
 
 function Layout() {
   return (
     <>
       <div className="top-line"></div>
-      
+      <FlagImage />
       
       {/* STRONY BĘDĄ WSTAWIANE TUTAJ */}
       <Outlet />
@@ -31,38 +26,29 @@ function Layout() {
   );
 }
 
-
-//Odpowiednik for-each
 function MainPage() {
-  const cars = ['Leccion 1 -> Praca z tekstem', 'Leccion 2 -> Praca ze zdaniami', 'Leccion 3 -> przydatne argumenty'];
-  return (
-    <>
-    <div className="top-line"></div>
-    <FlagImage />
-     <div className="center">
-          <h1 className='Map'>Apka Profe Beata</h1>
-          
+  const cars = [
+    'Leccion 1 -> Praca z tekstem',
+    'Leccion 2 -> Praca ze zdaniami',
+    'Leccion 3 -> przydatne argumenty'
+  ];
 
-  <ul className="text">
-    {cars.map(car => <li>{car}</li>)}
-    
-  </ul>
-  <Link to="/TaskFrase">Zadanie z Boxami prototyp</Link>
-  </div>
-    </>
+  return (
+    <div className="center">
+      <h1 className='Map'>Apka Profe Beata</h1>
+
+      <ul className="text">
+        {cars.map(car => <li key={car}>{car}</li>)}
+      </ul>
+
+      <Link to="/TaskFrase">Zadanie</Link>
+    </div>
   );
 }
 
-
 function App() {
   return (
-    
-    
-
-    
-    
-    
-     <BrowserRouter>
+    <BrowserRouter>
       <Routes>
         {/* Layout wspólny */}
         <Route path="/" element={<Layout />}>
@@ -76,9 +62,6 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-      
-    
-    
   );
 }
 
