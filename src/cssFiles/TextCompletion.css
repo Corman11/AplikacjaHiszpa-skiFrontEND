@@ -1,0 +1,167 @@
+/* Styl etykiety nad kwadratem — większa czcionka, pogrubienie, odstęp */
+.label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Podstawowy wygląd dużego kwadratu: rozmiar, kolor, ramka, zaokrąglenie */
+.box {
+  width: 600px;
+  height: 300px;
+  background-color: #f2f2f2;
+  border: 3px solid #555;
+  border-radius: 12px;
+  transition: 0.3s;
+  margin: auto; /* do ustawienia elementu na środku strony*/
+}
+
+/* Efekt po najechaniu na duży kwadrat: lekkie powiększenie i zmiana koloru */
+.box:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Tło całej strony */
+body {
+  background-color: antiquewhite;
+}
+
+/* Główny wrapper do centrowania treści w pionie i poziomie */
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* ułożenie elementów pionowo */
+  align-items: center;    /* centrowanie poziome */
+  font-size: x-large;
+  font-family:
+    'Trebuchet MS', 'Lucida Sans Unicode',
+    'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.label-outline {
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+.label-outline.active {
+  border: 2px solid red;
+}
+
+
+.label-outline.set {
+  border: 2px solid green;
+}
+
+/* Styl dla elementu przeciąganego — duże padding, kolor, zmiana kursora */
+.dragdiv {
+  padding: 8rem;
+  color: blueviolet;
+  cursor: grabbing;
+  font-size: medium;
+  font-weight: 600;
+  font-family:
+    'Trebuchet MS', 'Lucida Sans Unicode',
+    'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Kontener na klocki z odpowiedziami — prawa kolumna */
+.containerAnswer {
+  display: flex;
+  flex-direction: column; /* układ pionowy */
+  align-items: flex-end;  /* ustawienie przy prawej krawędzi */
+  gap: 80px;              /* odstępy między klockami */
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* układ pionowy */
+  align-items: flex-end;  /* ustawienie przy prawej krawędzi */
+  gap: 80px;              /* odstępy między klockami */
+  margin-top: 40px;
+  padding: 20px;
+}
+
+
+
+
+/* Wrapper pojedynczego klocka odpowiedzi — etykieta + klocek */
+.boxAnswerWrapper {
+  display: flex;
+  flex-direction: column; /* pionowo */
+  align-items: center;    /* wyśrodkuj poziomo */
+}
+
+/* Powtórzony styl boxAnswer — właściwie niepotrzebny, ale nie szkodzi */
+.boxAnswer {
+   width: 400px;
+  min-height: 120px;
+  background-color: #f2f2f2;
+  border: 3px solid #555;
+  border-radius: 12px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+
+.span-style{
+  background-color: white;
+}
+
+/* Efekt hover dla odpowiedzi — jak w dużych kwadratach */
+/* .boxAnswer:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+  cursor: pointer;
+} */
+
+/* Układ dwóch kolumn: lewa i prawa, w jednym rzędzie */
+.layout {
+  display: flex;              /* ustaw obie kolumny obok siebie */
+  justify-content: space-between; /* maksymalny rozstaw */
+  align-items: flex-start;        /* wyrównanie obu kolumn do góry */
+  width: 100%;                    /* pełna szerokość */
+}
+
+.layout-left {
+  width: 60%;
+  padding-left: 40px;
+
+}
+
+.layout-rigth {
+ width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-right: 40px;
+}
+
+
+
+/*Do pola na tekst do zadania*/
+.layout-text {
+  text-align: left;
+  
+}
+
+
+.box-text{
+
+  width: 600px;
+  height: 400;
+  background-color: #f2f2f2;
+  border: 3px solid #555;
+  border-radius: 12px;
+  transition: 0.3s;
+  margin: auto; /* do ustawienia elementu na środku strony*/
+}
+
+
+
