@@ -11,14 +11,14 @@
 .top-line {
   width: 100%;
   height: 100px;         /* grubość linii */
-  background-color: rgb(250, 116, 14);
+  background-color: red;
     /* kolor linii */
 }
 
 .bottom-line {
   width: 100%;
   height: 100px;
-  background-color: rgb(255, 169, 31);
+  background-color: red;
   margin-top: 250px; /* odstęp od góry — opcjonalny */
 }
 

@@ -14,6 +14,7 @@
   border: 3px solid #555;
   border-radius: 12px;
   transition: 0.3s;
+  margin: auto; /* do ustawienia elementu na środku strony*/
 }
 
 /* Efekt po najechaniu na duży kwadrat: lekkie powiększenie i zmiana koloru */
@@ -38,6 +39,22 @@ body {
   font-family:
     'Trebuchet MS', 'Lucida Sans Unicode',
     'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.label-outline {
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+.label-outline.active {
+  border: 2px solid red;
+}
+
+
+.label-outline.set {
+  border: 2px solid green;
 }
 
 /* Styl dla elementu przeciąganego — duże padding, kolor, zmiana kursora */
@@ -72,16 +89,7 @@ body {
 }
 
 
-/* Pojedynczy klocek odpowiedzi — wygląd */
-.boxAnswer {
-  width: 150px;
-  height: 75px;           /* mniejsza wysokość niż duży kwadrat */
-  text-decoration-color: #333;
-  background-color: #f2f2f2;
-  border: 3px solid #555;
-  border-radius: 12px;
-  transition: 0.3s;
-}
+
 
 /* Wrapper pojedynczego klocka odpowiedzi — etykieta + klocek */
 .boxAnswerWrapper {
@@ -92,20 +100,26 @@ body {
 
 /* Powtórzony styl boxAnswer — właściwie niepotrzebny, ale nie szkodzi */
 .boxAnswer {
-  width: 150px;
-  height: 75px;
+   width: 400px;
+  min-height: 120px;
   background-color: #f2f2f2;
   border: 3px solid #555;
   border-radius: 12px;
   transition: 0.3s;
+  cursor: pointer;
+}
+
+
+.span-style{
+  background-color: white;
 }
 
 /* Efekt hover dla odpowiedzi — jak w dużych kwadratach */
-.boxAnswer:hover {
+/* .boxAnswer:hover {
   background-color: #ddd;
   transform: scale(1.05);
   cursor: pointer;
-}
+} */
 
 /* Układ dwóch kolumn: lewa i prawa, w jednym rzędzie */
 .layout {
@@ -115,6 +129,39 @@ body {
   width: 100%;                    /* pełna szerokość */
 }
 
+.layout-left {
+  width: 60%;
+  padding-left: 40px;
+
+}
+
+.layout-rigth {
+ width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-right: 40px;
+}
 
 
-/*Przycisk do sprawdzania odpowiedzi*/
+
+/*Do pola na tekst do zadania*/
+.layout-text {
+  text-align: left;
+  
+}
+
+
+.box-text{
+
+  width: 600px;
+  height: 400;
+  background-color: #f2f2f2;
+  border: 3px solid #555;
+  border-radius: 12px;
+  transition: 0.3s;
+  margin: auto; /* do ustawienia elementu na środku strony*/
+}
+
+
+
