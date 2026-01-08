@@ -2,34 +2,15 @@ import '../App.css';
 import '../cssFiles/style.css'
 import '../cssFiles/TaskFrase.css'
 
+import {questionsData} from "./QuestionsData.js"
+
 
 import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same time
 
-import { useEffect, useRef ,useState} from "react";
+import { useMemo, useEffect, useRef ,useState, createRef } from "react";
 
+import React from 'react'
 
-
-//Tymczasowy plik w stylu JSON do testów
- const exersizeMap = [{
-    id : 0,
-    question : "żółw",
-    answer : "gady"
-  },
-  {
-    id : 1,
-    question : "sowa",
-    answer : "ptaki"
-
-
-  },
-  {
-    id : 2,
-    question : "pies",
-    answer : "ssaki"
-
-
-  }
-  ]
 
 function isQuestionInsideAnswer(answerRef, questionRef) {
   if (!answerRef.current || !questionRef.current) return false;
@@ -45,74 +26,96 @@ function isQuestionInsideAnswer(answerRef, questionRef) {
   );
 }
 
-function TaskFrase() {
-  const boxGadyRef = useRef(null);
-  const boxSsakiRef = useRef(null);
-  const boxPtakiRef = useRef(null);
 
-  const turtleRef = useRef(null);
-  const dogRef = useRef(null);
-  const bocianRef = useRef(null);
+
+
+
+
+function TaskFrase() {
+
+
+  const questionRefs = useRef({});
+  const answerRefs = useRef({
+  gady: React.createRef(),
+  ssaki: React.createRef(),
+  ptaki: React.createRef(),
+});
+
+  const shuffledBoxes = useMemo(() => {
+    return [...questionsData].sort(() => Math.random() - 0.5);
+  }, []);
+
+
+  const correctMap = {
+  turtle: "gady",
+  
+  };
+  // const boxGadyRef = useRef(null);
+  // const boxSsakiRef = useRef(null);
+  // const boxPtakiRef = useRef(null);
+
+  // const turtleRef = useRef(null);
+  // const dogRef = useRef(null);
+  // const bocianRef = useRef(null);
 
   const [result, setResult] = useState(null);
 
-  function checkTask() {
-    const correct =
-      isQuestionInsideAnswer(boxGadyRef, turtleRef) &&
-      isQuestionInsideAnswer(boxSsakiRef, dogRef) &&
-      isQuestionInsideAnswer(boxPtakiRef, bocianRef);
+  // function checkTask() {
+  //   const correct =
+  //     isQuestionInsideAnswer(boxGadyRef, turtleRef) &&
+  //     isQuestionInsideAnswer(boxSsakiRef, dogRef) &&
+  //     isQuestionInsideAnswer(boxPtakiRef, bocianRef);
 
-    setResult(correct);
-  }
+  //   setResult(correct);
+  // }
+
+//Wersja 2
+  function checkTask() {
+  const correct = Object.entries(correctMap).every(
+    ([questionId, answerId]) =>
+      isQuestionInsideAnswer(
+        answerRefs.current[answerId],
+        questionRefs.current[questionId]
+      )
+  );
+
+  setResult(correct);
+}
+
 
   return (
     <>
       <div className="layout">
-        <div className="container">
-          <div className="boxWrapper">
-            <p className="label">Gady</p>
-            <div className="box" ref={boxGadyRef}></div>
-          </div>
 
-          <div className="boxWrapper">
-            <p className="label">Ssaki</p>
-            <div className="box" ref={boxSsakiRef}></div>
-          </div>
-
-          <div className="boxWrapper">
-            <p className="label">Ptaki</p>
-            <div className="box" ref={boxPtakiRef}></div>
-          </div>
+         {/* ANSWERS */}
+      <div className="container">
+        <div className="boxWrapper">
+          <p className="label">Organizar el texto</p>
+          <div className="box" ref={answerRefs.current.gady} />
         </div>
+      </div>
 
-        <div className="containerAnswer">
-          <div className="boxWrapper">
-            <p className="label">Kwadrat 1</p>
-            <Draggable nodeRef={turtleRef}>
-              <div className="boxAnswer" ref={turtleRef}>
-                Żółw
-              </div>
-            </Draggable>
-          </div>
+      {/* QUESTIONS */}
+      <div className="containerAnswer">
+        {shuffledBoxes.map((box) => {
+          if (!questionRefs.current[box.id]) {
+            questionRefs.current[box.id] = createRef();
+          }
 
-          <div className="boxWrapper">
-            <p className="label">Kwadrat 2</p>
-            <Draggable nodeRef={dogRef}>
-              <div className="boxAnswer" ref={dogRef}>
-                Pies
-              </div>
-            </Draggable>
-          </div>
-
-          <div className="boxWrapper">
-            <p className="label">Kwadrat 3</p>
-            <Draggable nodeRef={bocianRef}>
-              <div className="boxAnswer" ref={bocianRef}>
-                Bocian
-              </div>
-            </Draggable>
-          </div>
-        </div>
+          return (
+            <div className="boxWrapper" key={box.id}>
+              <Draggable nodeRef={questionRefs.current[box.id]}>
+                <div
+                  className="boxAnswer"
+                  ref={questionRefs.current[box.id]}
+                >
+                  {box.content}
+                </div>
+              </Draggable>
+            </div>
+          );
+        })}
+      </div>
 
         <button onClick={checkTask}>Zakończ zadanie</button>
 

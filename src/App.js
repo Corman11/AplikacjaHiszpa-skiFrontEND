@@ -43,11 +43,20 @@ function MainPage() {
         {cars.map(car => <li key={car}>{car}</li>)}
       </ul> */}
 
+      Parte I <br />
+       EJERCICIOS DE CONTECTORES TEXTUALES  <br />
+      Encuentra los conectores textuales para:  
+
       <ul>
-      <Link to="/TaskFrase">Zadanie 1</Link>
+      <Link to="/TaskFrase">Organizar el texto</Link>
       </ul>
+
+      Parte II <br />
+      EJERCICIOS DE REDACCIÓN PARA EL EXAMEN DE SELECTIVIDAD - "PROGRAMA AMPLIADO" (matura rozszerzona)
+      1. Textos argumentativos <br />
+      A. Textos argumentativos tipo "Ventajas y desventajas"
       <ul>
-      <Link to="/TextCompletion">Zadanie 2</Link>
+      <Link to="/TextCompletion">zad1 – Uporządkowanie zgodnie z kolejnością</Link>
       </ul>
 
     </div>
@@ -66,6 +75,7 @@ function App() {
 
           {/* Zadanie 1*/}
           <Route path="TaskFrase" element={<TaskFrase />} />
+          
 
            {/* Zadanie 2  */}
           <Route path="TextCompletion" element={<TextCompletion />} />

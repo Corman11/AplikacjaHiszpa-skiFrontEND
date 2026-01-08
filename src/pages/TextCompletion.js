@@ -132,6 +132,8 @@ function finishTask(){
     <>
       <div className="layout">
         <div className='layout-left'>
+                          <p>Texto argumentativo</p>
+
               <div className='box-text'>
                   <div className='layout-text'>
                   Las redes sociales forman parte esencial de la vida moderna, especialmente para los jóvenes. Mi tesis es que

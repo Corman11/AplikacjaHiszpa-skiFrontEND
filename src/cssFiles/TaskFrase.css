@@ -8,8 +8,8 @@
 
 /* Podstawowy wygląd dużego kwadratu: rozmiar, kolor, ramka, zaokrąglenie */
 .box {
-  width: 600px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   background-color: #f2f2f2;
   border: 3px solid #555;
   border-radius: 12px;
@@ -25,7 +25,7 @@
 
 /* Tło całej strony */
 body {
-  background-color: antiquewhite;
+  background-color: yellow;
 }
 
 /* Główny wrapper do centrowania treści w pionie i poziomie */
@@ -66,7 +66,7 @@ body {
   display: flex;
   flex-direction: column; /* układ pionowy */
   align-items: flex-end;  /* ustawienie przy prawej krawędzi */
-  gap: 80px;              /* odstępy między klockami */
+  gap: 10px;              /* odstępy między klockami */
   margin-top: 40px;
   padding: 20px;
 }
@@ -75,7 +75,7 @@ body {
 /* Pojedynczy klocek odpowiedzi — wygląd */
 .boxAnswer {
   width: 150px;
-  height: 75px;           /* mniejsza wysokość niż duży kwadrat */
+  height: 150px;           /* mniejsza wysokość niż duży kwadrat */
   text-decoration-color: #333;
   background-color: #f2f2f2;
   border: 3px solid #555;
@@ -93,7 +93,7 @@ body {
 /* Powtórzony styl boxAnswer — właściwie niepotrzebny, ale nie szkodzi */
 .boxAnswer {
   width: 150px;
-  height: 75px;
+  height: 200px;
   background-color: #f2f2f2;
   border: 3px solid #555;
   border-radius: 12px;
@@ -105,6 +105,11 @@ body {
   background-color: #ddd;
   transform: scale(1.05);
   cursor: pointer;
+}
+
+.boxAnswer correct{
+
+  border: 3px solid green;
 }
 
 /* Układ dwóch kolumn: lewa i prawa, w jednym rzędzie */
