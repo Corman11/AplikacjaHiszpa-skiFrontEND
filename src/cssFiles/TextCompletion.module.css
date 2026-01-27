@@ -10,10 +10,11 @@
 .box {
   width: 600px;
   height: 300px;
-  background-color: #f2f2f2;
+  background-color:  #f9c235;
   border: 3px solid #555;
   border-radius: 12px;
   transition: 0.3s;
+  margin: auto; /* do ustawienia elementu na środku strony*/
 }
 
 /* Efekt po najechaniu na duży kwadrat: lekkie powiększenie i zmiana koloru */
@@ -24,9 +25,9 @@
 }
 
 /* Tło całej strony */
-body {
+/* body {
   background-color: antiquewhite;
-}
+} */
 
 /* Główny wrapper do centrowania treści w pionie i poziomie */
 .wrapper {
@@ -38,6 +39,26 @@ body {
   font-family:
     'Trebuchet MS', 'Lucida Sans Unicode',
     'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.labelOutline {
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+.labelOutlineActive  {
+  border: 2px solid cyan;
+}
+
+
+.labelOutlineSet  {
+  border: 2px solid green;
+}
+
+.labelOutlineWrong  {
+  border: 2px solid red;
 }
 
 /* Styl dla elementu przeciąganego — duże padding, kolor, zmiana kursora */
@@ -72,16 +93,7 @@ body {
 }
 
 
-/* Pojedynczy klocek odpowiedzi — wygląd */
-.boxAnswer {
-  width: 150px;
-  height: 75px;           /* mniejsza wysokość niż duży kwadrat */
-  text-decoration-color: #333;
-  background-color: #f2f2f2;
-  border: 3px solid #555;
-  border-radius: 12px;
-  transition: 0.3s;
-}
+
 
 /* Wrapper pojedynczego klocka odpowiedzi — etykieta + klocek */
 .boxAnswerWrapper {
@@ -92,20 +104,37 @@ body {
 
 /* Powtórzony styl boxAnswer — właściwie niepotrzebny, ale nie szkodzi */
 .boxAnswer {
-  width: 150px;
-  height: 75px;
+   width: 400px;
+  min-height: 120px;
   background-color: #f2f2f2;
   border: 3px solid #555;
   border-radius: 12px;
   transition: 0.3s;
+  cursor: pointer;
+}
+
+.boxAnswerDisable {
+   width: 400px;
+  min-height: 120px;
+  background-color: #f2f2f2;
+  border: 1px solid #555;
+  border-radius: 12px;
+  transition: 0.3s;
+  cursor: default;
+  opacity: 0.4;
+}
+
+
+.span-style{
+  background-color: white;
 }
 
 /* Efekt hover dla odpowiedzi — jak w dużych kwadratach */
-.boxAnswer:hover {
+/* .boxAnswer:hover {
   background-color: #ddd;
   transform: scale(1.05);
   cursor: pointer;
-}
+} */
 
 /* Układ dwóch kolumn: lewa i prawa, w jednym rzędzie */
 .layout {
@@ -115,6 +144,69 @@ body {
   width: 100%;                    /* pełna szerokość */
 }
 
+.layoutLeft {
+  width: 60%;
+  padding-left: 40px;
+
+}
+
+.layoutRigth {
+ width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-right: 40px;
+  padding-top: 30px;
+}
 
 
-/*Przycisk do sprawdzania odpowiedzi*/
+
+/*Do pola na tekst do zadania*/
+.layoutText {
+  text-align: left;
+  
+}
+
+
+.boxText{
+
+  width: 600px;
+  height: 400;
+  background-color: #f2f2f2;
+  border: 3px solid #555;
+  border-radius: 12px;
+  transition: 0.3s;
+  margin: auto; /* do ustawienia elementu na środku strony*/
+}
+
+
+/*Stylizacja dla przycisku sprawdzającego poprawność zadania*/
+
+.checkTaskStyle {
+
+}
+
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* wyśrodkowanie tytułu i boxa */
+  gap: 2px; /* odstęp między tytułem a kwadratem */
+}
+
+.boxTitle {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.buttonsBottom {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}

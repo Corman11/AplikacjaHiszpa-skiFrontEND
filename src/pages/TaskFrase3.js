@@ -4,16 +4,15 @@ import '../cssFiles/style.css'
 import styles from '../cssFiles/TaskFrase.module.css'
 import successMp3 from '../sounds/muy_bien.mp3';
 import failureMp3 from '../sounds/intenta_lo_de_nuevo.mp3';
-//Do przechodzenia pomiędzy ćwiczeniami
-import {useNavigate } from 'react-router-dom';
-
 
 import {questionsData} from "./QuestionsData.js"
 
-// Biblioteka pozwalająca na tworzenie obiektów na stronie z możliwością przeciągania przez użytkownika
-import Draggable from 'react-draggable'; 
+
+import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same time
 
 import { useMemo, useEffect, useRef ,useState, createRef } from "react";
+import {useNavigate } from 'react-router-dom';
+
 
 import React from 'react'
 
@@ -44,13 +43,14 @@ function isQuestionInsideAnswer(answerRef, questionRef) {
 
 
 
-function TaskFrase() {
+function TaskFrase3() {
 
 
   const questionRefs = useRef({});
   const answerRefs = useRef({
   gady: React.createRef(),
-  
+  ssaki: React.createRef(),
+  ptaki: React.createRef(),
 });
 
   const shuffledBoxes = useMemo(() => {
@@ -59,7 +59,7 @@ function TaskFrase() {
 
 
   const correctMap = {
-  turtle: "gady",
+  bocian: "gady",
   
   };
 
@@ -92,11 +92,32 @@ function TaskFrase() {
     
   }
 
+const navigate = useNavigate();
 
+
+
+  // const boxGadyRef = useRef(null);
+  // const boxSsakiRef = useRef(null);
+  // const boxPtakiRef = useRef(null);
+
+  // const turtleRef = useRef(null);
+  // const dogRef = useRef(null);
+  // const bocianRef = useRef(null);
 
   const [result, setResult] = useState(null);
 
   const [correctanswer, setCorrectAnswer] = useState(null);
+
+  // function checkTask() {
+  //   const correct =
+  //     isQuestionInsideAnswer(boxGadyRef, turtleRef) &&
+  //     isQuestionInsideAnswer(boxSsakiRef, dogRef) &&
+  //     isQuestionInsideAnswer(boxPtakiRef, bocianRef);
+
+  //   setResult(correct);
+  // }
+
+//Wersja 2
 
 
 function checkIfMultipleInAnswer() {
@@ -108,11 +129,11 @@ function checkIfMultipleInAnswer() {
     Object.entries(answerRefs.current).forEach(([answerId, answerRef]) => {
       if (
         isQuestionInsideAnswer(
-      answerRef,
-      questionRefs.current[question.id]
+          answerRef,
+          questionRefs.current[question.id]
         )
       ) {
-      counts[answerId]++;
+        counts[answerId]++;
       }
     });
   });
@@ -150,8 +171,8 @@ function checkIfMultipleInAnswer() {
       setCorrectAnswer(true);
   }
 
-//Wykorzystanie useNavigate do nawigacji
-const navigate = useNavigate();
+
+
 
 
   return (
@@ -171,14 +192,14 @@ const navigate = useNavigate();
 
       <PlayRender result={result} />
         <div className={styles.resultSlot}> 
-        {result === true && <h1>Muy bien!</h1>}
+       {result === true && <h1>Muy bien!</h1>}
         {result === false && <h1>Intenta de nuevo</h1>}
         </div>
 
          {/* ANSWERS */}
       <div className={styles.container}>
         <div className={styles.boxWrapper}>
-          <p className={styles.label}>Organizar el texto</p>
+          <p className={styles.label}>Indicar causa</p>
           <div className={styles.box} ref={answerRefs.current.gady} />
         </div>
       </div>
@@ -186,6 +207,9 @@ const navigate = useNavigate();
       {/* QUESTIONS */}
       <div className={styles.ansersLayout}>
       <div className={styles.containerAnswerTop}>
+
+
+
         {shuffledBoxes.slice(0,5).map((box) => {
           if (!questionRefs.current[box.id]) {
             questionRefs.current[box.id] = createRef();
@@ -195,7 +219,7 @@ const navigate = useNavigate();
             <div className={styles.boxAnwserWrapper} key={box.id}>
               <Draggable nodeRef={questionRefs.current[box.id]}>
                 <div
-                  className={`${correctanswer === true && box.id === 'turtle' ? styles.boxAnswerCorrect : styles.boxAnswer}`}
+                  className={`${correctanswer === true && box.id === 'bocian' ? styles.boxAnswerCorrect : styles.boxAnswer}`}
                   ref={questionRefs.current[box.id]}
                 >
                   {box.content}
@@ -204,7 +228,10 @@ const navigate = useNavigate();
             </div>
           );
         })}
-        </div>
+
+
+        
+      </div>
 
 
        {/* .slice pozwala na określenie zakresu iteracji w JSX */}
@@ -221,7 +248,7 @@ const navigate = useNavigate();
             <div className={styles.boxAnwserWrapper} key={box.id}>
               <Draggable nodeRef={questionRefs.current[box.id]}>
                 <div
-                  className={  `${correctanswer === true && box.id === 'turtle'? styles.boxAnswerCorrect : styles.boxAnswer}` }
+                  className={  `${correctanswer === true && box.id === 'bocian'? styles.boxAnswerCorrect : styles.boxAnswer}` }
                   ref={questionRefs.current[box.id]}
                 >
                   {box.content}
@@ -236,17 +263,17 @@ const navigate = useNavigate();
        {/* QUESTIONS  END*/}
 
           <div className={styles.buttonsBottom}>
+ <button onClick={() => navigate("/TaskFrase2")}
+          disabled={!result}
+          >Poprzednie zadanie</button>
 
         <button onClick={checkTask}>Zakończ zadanie</button>
         <button onClick={revealCorrectAnswer}>Sprawdź poprawną odpowiedz</button>
 
 
-
-
-        <button onClick={() => navigate("/TaskFrase2")}
+           <button onClick={() => navigate("/TaskFrase4")}
           disabled={!result}
           >Zadanie 2 - Ańadir Ideas</button>
-
         </div>
 
 
@@ -257,4 +284,4 @@ const navigate = useNavigate();
   );
 }
 
-export default TaskFrase;
+export default TaskFrase3;

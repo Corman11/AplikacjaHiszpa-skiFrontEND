@@ -1,0 +1,214 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: yellow;
+  margin: 0;
+  font-family:
+    'Trebuchet MS',
+    'Lucida Sans Unicode',
+    'Lucida Grande',
+    'Lucida Sans',
+    Arial,
+    sans-serif;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.container,
+.containerAnswer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.container {
+  align-items: flex-end;
+  gap: 10px;
+  padding-left: 50px;
+}
+
+
+
+
+
+
+
+
+/* kwadraty z odpowiedzia */
+
+.ansersLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-right: 50px; 
+}
+
+
+.containerAnswerTop {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding-top: 30px;
+}
+
+.containerAnswerBottom {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+
+
+
+
+
+
+/* =========================
+   LABEL
+========================= */
+
+.label {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* =========================
+   MAIN BOX (TARGET)
+========================= */
+
+.box {
+  width: 300px;
+  height: 300px;
+  background-color: #f2f2f2;
+  border: 3px solid #555;
+  border-radius: 12px;
+  transition: background-color 0.3s;
+  
+}
+
+.box:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+/* =========================
+   ANSWER BOXES
+========================= */
+
+.boxAnswerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boxAnswer {
+  width: 200px;
+  height: 200px;
+  background-color: #f2f2f2;
+  border: 3px solid #555;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  transition: background-color 0.3s, border-color 0.3s;
+  cursor: grab;
+}
+
+.boxAnswer:hover {
+  background-color: #ddd;
+}
+
+.boxAnswerCorrect {
+  width: 200px;
+  height: 200px;
+  background-color: #f2f2f2;
+  border: 9px solid #4df200;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  transition: background-color 0.3s, border-color 0.3s;
+  cursor: grab;
+}
+
+.boxAnswer.wrong {
+  border-color: red;
+}
+
+/* =========================
+   DRAGGING STATE
+========================= */
+
+.boxAnswer:active {
+  cursor: grabbing;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttonsBottom {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+
+/* LABELS */
+
+.taskSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.taskLabelTop {
+  font-weight: 600;
+  font-size: 16px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.taskLabelBottom {
+  font-size: 14px;
+  color: #666;
+}
+
+.resultSlot {
+  min-height: 7rem;
+}

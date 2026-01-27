@@ -15,6 +15,31 @@
     /* kolor linii */
 }
 
+.topLineNav{
+  display: flex;              /* włącza flexbox */
+  align-items: center;        /* wyrównanie pionowe do środka */
+  justify-content: flex-start; /* równomierne rozmieszczenie elementów */
+  padding: 10px 10px;         /* odstępy wewnętrzne */
+   /* opcjonalnie linia oddzielająca */
+  gap: 15px; 
+}
+
+.topLineNav button {
+  padding: 8px 16px;          /* wewnętrzne odstępy */
+  font-size: 16px;            /* rozmiar tekstu */
+  background-color: #ffe600;  /* kolor tła */
+  border: 2px solid #ff0000;     /* obramowanie */
+  border-radius: 8px;         /* zaokrąglone rogi */
+  cursor: pointer;            /* zmiana kursora przy najechaniu */
+  transition: 0.3s;           /* płynna zmiana przy hover */
+}
+
+.topLineNav button:hover {
+  background-color: #555;     /* kolor tła po najechaniu */
+  color: #ff5e00;                /* kolor tekstu po najechaniu */
+  transform: scale(1.05);     /* delikatne powiększenie */
+}
+
 .bottom-line {
   width: 100%;
   height: 100px;
@@ -30,9 +55,14 @@ div.b {
   position: absolute;
   right: 20px;
   top: 20px;
-  border: 3px solid blue;
+  
   padding: 10px;
   width: fit-content;
+}
+
+.navbarImage {
+  height: 30px;
+  width: auto;
 }
 
 .text {
