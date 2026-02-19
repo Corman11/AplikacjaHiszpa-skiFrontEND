@@ -6,6 +6,7 @@ import successMp3 from '../sounds/muy_bien.mp3';
 import failureMp3 from '../sounds/intenta_lo_de_nuevo.mp3';
 import {useNavigate } from 'react-router-dom';
 
+import {ExerciseInstructions} from "./WebpageText.js"
 
 
 
@@ -287,7 +288,7 @@ const navigate = useNavigate();
 
         <button onClick={() => navigate("/TextCompletion2")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
-          >Zadanie 2 - Ańadir Ideas</button>
+          >{ExerciseInstructions.exersize1Next}</button>
       </div>
 
     </>

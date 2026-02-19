@@ -6,6 +6,7 @@ import successMp3 from '../sounds/muy_bien.mp3';
 import failureMp3 from '../sounds/intenta_lo_de_nuevo.mp3';
 import {useNavigate } from 'react-router-dom';
 
+import {ExerciseInstructions} from "./WebpageText.js"
 
 
 import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same time
@@ -332,9 +333,9 @@ buscar un equilibrio que permita disfrutar de los beneficios
 </div>
 
       <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion3")}
+      <button onClick={() => navigate("/TextCompletion4")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
-          >Zadanie 1</button>
+          >{ExerciseInstructions.exersize1Previous}</button>
 
       <button onClick={() => window.location.reload(false)}>Rozpocznij zadanie od nowa</button>
       <button onClick={giveUpShowAnswers}>Poddaj Się - Sprawdź odpowiedzi</button>

@@ -6,6 +6,7 @@ import successMp3 from '../sounds/muy_bien.mp3';
 import failureMp3 from '../sounds/intenta_lo_de_nuevo.mp3';
 
 import {questionsData} from "./QuestionsData.js"
+import {ExerciseInstructions} from "./WebpageText.js"
 
 
 import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same time
@@ -262,18 +263,22 @@ function checkIfMultipleInAnswer() {
 
        {/* QUESTIONS  END*/}
 
-          <div className={styles.buttonsBottom}>
- <button onClick={() => navigate("/TaskFrase2")}
+         <div className={styles.buttonsBottom}>
+
+            <button onClick={() => navigate("/TaskFrase2")}
           disabled={!result}
-          >Poprzednie zadanie</button>
+          >{ExerciseInstructions.exersize1Previous}</button>
+
 
         <button onClick={checkTask}>Zakończ zadanie</button>
         <button onClick={revealCorrectAnswer}>Sprawdź poprawną odpowiedz</button>
 
+          
 
-           <button onClick={() => navigate("/TaskFrase4")}
+          <button onClick={() => navigate("/TaskFrase4")}
           disabled={!result}
-          >Zadanie 2 - Ańadir Ideas</button>
+          >{ExerciseInstructions.exersize1Next}</button>
+
         </div>
 
 

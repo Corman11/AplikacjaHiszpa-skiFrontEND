@@ -9,6 +9,7 @@ import {useNavigate } from 'react-router-dom';
 
 
 import {questionsData} from "./QuestionsData.js"
+import {ExerciseInstructions} from "./WebpageText.js"
 
 // Biblioteka pozwalająca na tworzenie obiektów na stronie z możliwością przeciągania przez użytkownika
 import Draggable from 'react-draggable'; 
@@ -245,7 +246,7 @@ const navigate = useNavigate();
 
         <button onClick={() => navigate("/TaskFrase2")}
           disabled={!result}
-          >Zadanie 2 - Ańadir Ideas</button>
+          >{ExerciseInstructions.exersize1Next}</button>
 
         </div>
 

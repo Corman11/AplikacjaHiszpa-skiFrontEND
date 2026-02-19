@@ -6,6 +6,7 @@ import successMp3 from '../sounds/muy_bien.mp3';
 import failureMp3 from '../sounds/intenta_lo_de_nuevo.mp3';
 import {useNavigate } from 'react-router-dom';
 
+import {ExerciseInstructions} from "./WebpageText.js"
 
 
 import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same time
@@ -329,7 +330,7 @@ la educación online con métodos presenciales, para que se logre un
       <div className={styles.buttonsBottom}>
       <button onClick={() => navigate("/TextCompletion2")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
-          >Zadanie 2</button>
+          >{ExerciseInstructions.exersize1Previous}</button>
 
       <button onClick={() => window.location.reload(false)}>Rozpocznij zadanie od nowa</button>
       <button onClick={giveUpShowAnswers}>Poddaj Się - Sprawdź odpowiedzi</button>
@@ -341,7 +342,7 @@ la educación online con métodos presenciales, para que se logre un
 
          <button onClick={() => navigate("/TextCompletion4")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
-          >Zadanie 4</button>
+          >{ExerciseInstructions.exersize1Next}</button>
       </div>
 
     </>

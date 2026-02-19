@@ -7,6 +7,7 @@ import failureMp3 from '../sounds/intenta_lo_de_nuevo.mp3';
 import {useNavigate } from 'react-router-dom';
 
 import {questionsData} from "./QuestionsData.js"
+import {ExerciseInstructions} from "./WebpageText.js"
 
 
 import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same time
@@ -265,7 +266,7 @@ const navigate = useNavigate();
 
             <button onClick={() => navigate("/TaskFrase6")}
           disabled={!result}
-          >Poprzednie zadanie</button>
+          >{ExerciseInstructions.exersize1Previous}</button>
 
 
         <button onClick={checkTask}>Zakończ zadanie</button>
@@ -275,7 +276,7 @@ const navigate = useNavigate();
 
           <button onClick={() => navigate("/TaskFrase8")}
           disabled={!result}
-          >Zadanie 2 - Ańadir Ideas</button>
+          >{ExerciseInstructions.exersize1Next}</button>
 
         </div>
 

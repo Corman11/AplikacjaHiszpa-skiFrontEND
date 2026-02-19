@@ -14,6 +14,7 @@ import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same ti
 import { useMemo, useEffect, useRef ,useState, createRef } from "react";
 
 import React from 'react'
+import { ExerciseInstructions } from './WebpageText.js';
 
 
 // TODO
@@ -265,7 +266,7 @@ const navigate = useNavigate();
 
             <button onClick={() => navigate("/TaskFrase")}
           disabled={!result}
-          >Poprzednie zadanie</button>
+          >{ExerciseInstructions.exersize1Previous}</button>
 
 
         <button onClick={checkTask}>Zakończ zadanie</button>
@@ -275,7 +276,7 @@ const navigate = useNavigate();
 
           <button onClick={() => navigate("/TaskFrase3")}
           disabled={!result}
-          >Zadanie 2 - Ańadir Ideas</button>
+          >{ExerciseInstructions.exersize1Next}</button>
 
         </div>
 
