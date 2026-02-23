@@ -106,7 +106,7 @@ return (
       <Link to="/TextCompletion2">Ib. Carrera Universitaria de los jóvenes </Link>
       </ul>
        <ul>
-      <Link to="/TextCompletion3">Ic. Presenta ventajas y desventajas de la  educación en línea </Link>
+      <Link to="/TextCompletion3">Ic. Presenta ventajas y desventajas de la  educación online </Link>
       </ul>
       <ul>
       <Link to="/TextCompletion4">Id. Hay tantas ventajas como desventajas del consumo responsable</Link>

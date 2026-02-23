@@ -212,7 +212,7 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Hay tantas ventajas como desventajas del consumo responsable.
+    Tema: Las ventajas y desventajas del turismo masivo.
   </h3>
               <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
               <div className={styles.boxText}>
