@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function Articulo2() {
 
 
    //Sounds
@@ -107,13 +107,20 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
+  {content: `Cada día vemos a más personas pegadas a la pantalla del teléfono, pero no siempre somos conscientes de cómo este comportamiento afecta a quienes están alrededor. A veces, basta una sola situación para darnos cuenta de que el uso inadecuado del móvil puede generar molestias e incluso conflictos. Eso es lo que presencié hace unas semanas en la biblioteca municipal de mi ciudad.
+`},
 
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
+  {content:`Todo ocurrió una tarde de estudio. Mientras la sala permanecía en silencio, un joven empezó a ver vídeos sin auriculares. A pesar de que varias personas le miraron con sorpresa, él continuó ignorando a todos. Incluso cuando la bibliotecaria se acercó para pedirle amablemente que bajara el volumen, respondió de manera poco respetuosa. Finalmente, varios estudiantes decidieron marcharse porque ya no podían concentrarse.
 
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
+`},
 
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
+  {content:`A mi juicio, la reacción de los presentes fue comprensible, ya que la mayoría intentó solucionar la situación con calma. Sin embargo, me pareció exagerado que algunas personas grabaran al joven para subir el vídeo a redes sociales. Aunque su comportamiento fue inapropiado, exponer a alguien públicamente no es la solución. Sería más eficaz que se fomentara la educación digital y el respeto en espacios compartidos.
+
+`},
+
+  {content:`En conclusión, incidentes como este demuestran que el problema no es el teléfono en sí, sino el modo en que lo utilizamos. Si queremos convivir mejor, necesitamos normas claras y, sobre todo, más consideración hacia los demás.`
+},
+
 
   ];
 
@@ -204,15 +211,16 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
-  </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
+    Tema: Los teléfonos móviles se han convertido en nuestro compañero inseparable; sin embargo, mucha gente los usa en espacios públicos de una manera que molesta a los demás. Escribe un artículo en el que:
+
+describas un incidente relacionado con el uso inapropiado del teléfono móvil en un espacio público,
+
+expreses tu opinión sobre la reacción de los participantes en dicho suceso. </h3>
+              <p>TIPO : Artículo</p>
               <div className={styles.boxText}>
                 
                   <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
-  
+                 
                   <span 
                   className={`${styles.labelOutline}
     ${selectedObject === 1 ? styles.labelOutlineActive : ""}
@@ -223,9 +231,6 @@ const navigate = useNavigate();
 
                 </span>
                 <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
                   <span
                   className={`${styles.labelOutline}
     ${selectedObject === 2 ? styles.labelOutlineActive : ""}
@@ -235,11 +240,9 @@ const navigate = useNavigate();
                   {answers[2] || "_____________________________________________________"}
 
                 </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
-<p/>
-        <span
+                                <p/>
+
+         <span
                   className={`${styles.labelOutline}
     ${selectedObject === 3 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
@@ -248,12 +251,8 @@ con recursos tradicionales, habría aprendido mejor.
                   {answers[3] || "___________________________________________________________________"}
 
                 </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
+                <p/>
+ <p/>
                  <span
                   className={`${styles.labelOutline}
     ${selectedObject === 4 ? styles.labelOutlineActive : ""}
@@ -263,12 +262,13 @@ portantes, como la falta de satisfacción personal.
                   {answers[4] || "___________________________________________________________________"}
 
                 </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
         
+
+     
+
+                
+
+                
               </div>
               </div>
         </div>
@@ -324,7 +324,7 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 
       <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+      <button onClick={() => navigate("/Articulo1")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,7 +336,7 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
+         <button onClick={() => navigate("/Articulo2")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Next}</button>
       </div>
@@ -365,4 +365,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default Articulo2;

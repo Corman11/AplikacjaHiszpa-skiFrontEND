@@ -4,7 +4,7 @@ export const AboutPageContent = {
             PierwszaPolowaTesktu: (
 
         <>
-             Soy la profesora de español, Profe Bea. 
+             Soy Profesora de español, Profe Bea. 
              Trabajo en dos Institutos - Tercero y Cuarto de Bydgoszcz - Polonia.   Nunca te aburrirás conmigo gracias a mi energía desbordante y un poco loca. Mis clases son muy interesantes 
               y están llenas de música, canto y baile. Viví en España, Portugal e Inglaterra durante varios años. 
               Cada día obtengo energía del flamenco, la zumba y el aquagym. Me apasiona encontrar nuevos métodos 

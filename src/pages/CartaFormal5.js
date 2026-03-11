@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function CartaFormal5() {
 
 
    //Sounds
@@ -107,13 +107,33 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
+  {content: `[Ciudad], [fecha]`},
 
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
+  {content:`A la redacción de [Nombre del periódico]:
+`},
 
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
+  {content:`Estimados señores:
+`},
 
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
+  {content:`Les escribo tras haber leído el reciente artículo publicado en su revista, en el que el autor cuestiona la necesidad de aprender lenguas extranjeras en una época en la que los traductores automáticos están al alcance de todos. El objetivo de esta carta es expresar mi desacuerdo y explicar por qué considero que el dominio personal de un idioma sigue siendo esencial.
+`},
+
+    {content:`En primer lugar, aunque es cierto que las aplicaciones de traducción han mejorado mucho, todavía cometen errores importantes, sobre todo en expresiones idiomáticas y contextos culturales. Como afirma el Instituto Cervantes en varios informes, ningún traductor automático puede sustituir completamente la comprensión real de una lengua. Además, saber idiomas permite comunicarse de forma natural y espontánea, algo que ninguna herramienta puede reproducir, por muy avanzada que sea.
+`},
+
+
+      {content:`Quisiera también compartir una experiencia personal. Hace un año, utilicé un traductor para enviar un mensaje en inglés a un estudiante extranjero. Yo quería escribir que “estaba muy emocionado por participar en el proyecto”, pero la aplicación lo tradujo como I was very moved, lo que causó un evidente malentendido. Si hubiera tenido más confianza en mi propio conocimiento del idioma, la situación no se habría producido. Por eso considero fundamental que se siga promoviendo el aprendizaje de lenguas en la escuela.
+`},
+
+
+        {content:`Agradezco de antemano su atención y espero que esta reflexión resulte útil para continuar el debate.
+`},
+
+ {content:`Atentamente,
+`},
+
+{content:`[Firma]\n
+[Nombre y apellidos]`},
 
   ];
 
@@ -204,15 +224,12 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
-  </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
+    Tema: Acabas de leer un artículo en el que el autor cuestionaba la utilidad de aprender idiomas extranjeros en la era de los programas electrónicos de traducción de textos (por ejemplo, aplicaciones de traducción automática). Escribe una carta a la redacción en la que expliques por qué no estás de acuerdo con el autor y describas una situación en la que el uso de un traductor por tu parte causó un malentendido.  </h3>
+              <p>TIPO : Carta Formal</p>
               <div className={styles.boxText}>
                 
                   <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
-  
+                 
                   <span 
                   className={`${styles.labelOutline}
     ${selectedObject === 1 ? styles.labelOutlineActive : ""}
@@ -223,9 +240,6 @@ const navigate = useNavigate();
 
                 </span>
                 <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
                   <span
                   className={`${styles.labelOutline}
     ${selectedObject === 2 ? styles.labelOutlineActive : ""}
@@ -235,11 +249,9 @@ const navigate = useNavigate();
                   {answers[2] || "_____________________________________________________"}
 
                 </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
-<p/>
-        <span
+                                <p/>
+
+         <span
                   className={`${styles.labelOutline}
     ${selectedObject === 3 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
@@ -248,12 +260,8 @@ con recursos tradicionales, habría aprendido mejor.
                   {answers[3] || "___________________________________________________________________"}
 
                 </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
+                <p/>
+ <p/>
                  <span
                   className={`${styles.labelOutline}
     ${selectedObject === 4 ? styles.labelOutlineActive : ""}
@@ -263,12 +271,72 @@ portantes, como la falta de satisfacción personal.
                   {answers[4] || "___________________________________________________________________"}
 
                 </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
         
+
+        <p/>
+ <p/>
+                 <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 5 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(4) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(5)}}
+                >
+                  {answers[5] || "___________________________________________________________________"}
+
+                </span>
+
+
+                <p/>
+ <p/>
+                 <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 6 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(5) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(6)}}
+                >
+                  {answers[6] || "___________________________________________________________________"}
+
+                </span>
+
+                <p/>
+ <p/>
+                 <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 7 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(6) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(7)}}
+                >
+                  {answers[7] || "___________________________________________________________________"}
+
+                </span>
+ <p/>
+
+                <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 8 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(7) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(8)}}
+                >
+                  {answers[8] || "___________________________________________________________________"}
+
+                </span>
+
+
+                <p/>
+
+                <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 9 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(8) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(9)}}
+                >
+                  {answers[9] || "_________________________"}
+
+                </span>
+
+                
+
+                
               </div>
               </div>
         </div>
@@ -311,7 +379,7 @@ la educación online con métodos presenciales, para que se logre un
   answersShuffled.map((question) => {
 
         return (
-          <div className = {taskFinished ? styles.boxAnswerDisable : styles.boxAnswer}
+          <div className = {taskFinished ? styles.boxAnswerNoSetSizeCartaFormal : styles.boxAnswerDisableNoSetSizeCartaFormal}
           onClick = {() => handleWordClick(question.content)}>
             {question.content}
             </div>
@@ -324,7 +392,7 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 
       <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+      <button onClick={() => navigate("/CartaFormal4")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,9 +404,7 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
-          disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
-          >{ExerciseInstructions.exersize1Next}</button>
+         
       </div>
 
     </>
@@ -365,4 +431,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default CartaFormal5;

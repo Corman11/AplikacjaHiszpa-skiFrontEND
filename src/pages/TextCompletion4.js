@@ -107,20 +107,13 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Sin embargo, esta práctica genera tanto beneficios 
- como dificultades. En mi opinión, hay tantas ventajas 
- como desventajas en intentar consumir de manera responsable.`},
+  {content: `Sin embargo, esta práctica genera tanto beneficios como dificultades. En mi opinión, hay tantas ventajas como desventajas en intentar consumir de manera responsable.`},
 
-  {content:`Según la ONU, si todos redujeran 
-el desperdicio y eligieran productos ecológicos,
- se disminuiría la contaminación y se protegerían 
- los recursos naturales.`},
+  {content:`Según la ONU, si todos redujeran el desperdicio y eligieran productos ecológicos, se disminuiría la contaminación y se protegerían los recursos naturales.`},
 
-  {content:`Por otro lado, consumir de forma responsable no 
-siempre es fácil.`},
+  {content:`Por otro lado, consumir de forma responsable no siempre es fácil.`},
 
-  {content:`Así, se logrará que esta práctica beneficie
-  tanto al planeta como a las personas.`}
+  {content:`Así, se logrará que esta práctica beneficie tanto al planeta como a las personas`}
 
   ];
 

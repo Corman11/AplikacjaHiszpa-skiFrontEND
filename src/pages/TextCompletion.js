@@ -127,17 +127,11 @@ const [answers, setAnswers] = useState({
 
   //Obiekt przechowujący poprawne odpowiedzi - to klucz odpowiedzi dla aplikacji
   const correctAnsers = [
-  {content: `Por un lado, las redes sociales 
-  aportan varias ventajas. Permiten comunicarse con amigos y familiares que 
-  viven lejos y facilitan la creación de nuevas relaciones.`},
+  {content: `Por un lado, las redes sociales  aportan varias ventajas. Permiten comunicarse con amigos y familiares que viven lejos y facilitan la creación de nuevas relaciones.`},
 
-  {content:`Por otro lado, las redes sociales también pueden ser peligrosas. Uno de los
-  problemas más comunes es la adicción: muchas personas pasan demasiado
-  tiempo conectadas y descuidan sus estudios, su salud o sus relaciones reales.`},
+  {content:`Por otro lado, las redes sociales también pueden ser peligrosas. Uno de los problemas más comunes es la adicción: muchas personas pasan demasiado tiempo conectadas y descuidan sus estudios, su salud o sus relaciones reales.`},
 
-  {content:`En conclusión, las redes sociales tienen beneficios y riesgos en partes iguales. Su
-  impacto depende del uso que cada persona haga de ellas. Por eso, es esencial
-  aprender a utilizarlas con responsabilidad.`}
+  {content:`En conclusión, las redes sociales tienen beneficios y riesgos en partes iguales. Su impacto depende del uso que cada persona haga de ellas. Por eso, es esencial aprender a utilizarlas con responsabilidad.`}
 
   ];
 
@@ -248,7 +242,7 @@ const navigate = useNavigate();
     ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(3)}}
                 >
-                  {answers[3] || "___________________________________________________________________"}
+                  {answers[3] || "__________________________________________________________________"}
 
                 </span>
         

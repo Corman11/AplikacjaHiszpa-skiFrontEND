@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function Articulo1() {
 
 
    //Sounds
@@ -107,13 +107,20 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
+  {content: `¿Alguna vez has pensado que un simple curso previo a un campamento podría cambiar por completo tu forma de actuar en una situación difícil? Eso fue exactamente lo que me ocurrió este verano, cuando participé como asistente de monitor en un campamento infantil dentro de un proyecto de voluntariado. Aunque al principio lo tomé como una experiencia más, pronto descubrí que la formación recibida era mucho más útil de lo que imaginaba.
+`},
 
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
+  {content:`El programa de preparación fue intenso pero muy práctico. Incluía talleres de primeros auxilios, dinámicas sobre resolución de conflictos y actividades destinadas a mejorar la comunicación con niños pequeños. Además, recibimos instrucciones precisas sobre cómo reaccionar ante imprevistos, algo que en aquel momento me pareció quizá exagerado. Sin embargo, ahora creo que esa formación fue fundamental para sentirme seguro durante el campamento.
 
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
+`},
 
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
+  {content:`De hecho, uno de los momentos más importantes ocurrió durante una excursión. Un niño se tropezó y sufrió un corte bastante profundo en la rodilla. Gracias a las técnicas aprendidas, pude limpiar y vendar la herida correctamente mientras el monitor principal avisaba a los responsables. Si no hubiera realizado esa formación antes, probablemente me habría puesto nervioso y no habría sabido actuar con la calma necesaria.
+
+`},
+
+  {content:`En conclusión, esta experiencia me demostró que la teoría solo cobra sentido cuando se aplica de verdad. El voluntariado no solo me permitió ayudar a otros, sino también descubrir capacidades que no sabía que tenía.
+`},
+
 
   ];
 
@@ -204,71 +211,60 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
-  </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
+Tema: Durante las vacaciones trabajaste como voluntario/a asistente de monitor en un campamento de verano para niños. Escribe un artículo en el que presentes el programa de formación que precedió a tu partida y relates un incidente ocurrido en el campamento que requirió el uso práctico de las habilidades adquiridas durante dicha formación.  </h3>
+              <p>TIPO : Artículo</p>
               <div className={styles.boxText}>
                 
                   <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
-  
+                 
                   <span 
                   className={`${styles.labelOutline}
     ${selectedObject === 1 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(0) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(1)}}
                 >
-                  {answers[1] || "________________________________________________"}
+                  {answers[1] || "________________________________________________\n_________________________________________________\n_________________________________________________"}
 
                 </span>
                 <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
                   <span
                   className={`${styles.labelOutline}
     ${selectedObject === 2 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(2)}}
                 >
-                  {answers[2] || "_____________________________________________________"}
+                  {answers[2] || "________________________________________________\n_________________________________________________\n_________________________________________________"}
 
                 </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
-<p/>
-        <span
+                                <p/>
+
+         <span
                   className={`${styles.labelOutline}
     ${selectedObject === 3 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() =>{if (taskFinished) return;  setSelectedObject(3)}}
                 >
-                  {answers[3] || "___________________________________________________________________"}
+                  {answers[3] || "________________________________________________\n_________________________________________________\n_________________________________________________"}
 
                 </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
+                <p/>
+ <p/>
                  <span
                   className={`${styles.labelOutline}
     ${selectedObject === 4 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(4)}}
                 >
-                  {answers[4] || "___________________________________________________________________"}
+                  {answers[4] || "________________________________________________\n_________________________________________________\n_________________________________________________"}
 
                 </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
         
+
+     
+
+                
+
+                
               </div>
               </div>
         </div>
@@ -324,7 +320,7 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 
       <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+      <button onClick={() => navigate("/Articulo1")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,9 +332,7 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
-          disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
-          >{ExerciseInstructions.exersize1Next}</button>
+         
       </div>
 
     </>
@@ -365,4 +359,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default Articulo1;

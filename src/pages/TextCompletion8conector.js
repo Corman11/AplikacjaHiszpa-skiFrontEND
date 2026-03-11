@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function TextCompletion8conector() {
 
 
    //Sounds
@@ -105,41 +105,22 @@ const [answers, setAnswers] = useState({
   2: "",
 });
 
-
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
-
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
-
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
-
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
-
-  ];
-
-  const texto= `Cada vez más jóvenes eligen su carrera 
-  universitaria pensando en las exigencias del mercado laboral.
-<Esta tendencia genera un debate interesante, ya que presenta tanto beneficios 
-   como inconvenientes. Existen tantas ventajas como desventajas en este tipo de decisiones.>
-
-Por un lado, elegir una carrera con alta demanda laboral aumenta las posibilidades 
-de conseguir empleo estable y bien remunerado. Según un informe del Ministerio de Educación, 
-los graduados en ingeniería y tecnología tienen tasas de inserción superiores al 80 %. 
-
-<Este dato demuestra que seguir las necesidades del mercado puede garantizar seguridad
- económica, algo muy valorado en la sociedad actual.>
-
-Por otro lado, esta elección puede provocar frustración si la persona no siente interés 
-por la profesión. Imaginemos a alguien que estudió informática solo por las oportunidades 
-laborales, pero que siempre había soñado con ser profesor de historia. <Si hubiera seguido 
-sus verdaderas pasiones, quizá habría sido más feliz, aunque con menos estabilidad. 
-Que los jóvenes prioricen únicamente el mercado hace que se pierda la motivación y la creatividad.>
-
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas importantes, como la falta de satisfacción personal. 
- <Por eso, conviene que cada estudiante reflexione antes de decidir,
-  para que su elección no dependa solo del mercado, sino también de sus intereses.>`;
-
+  {content: `Según`},
+  {content: `además`},
+  {content: `En mi opinión`},
+  {content: `En primer lugar`},
+  {content: `pero`},
+  {content: `Por ejemplo`},
+  {content: `Por lo tanto`},
+  {content: `De hecho`},
+  {content: `Por otra parte`},
+  {content: `Sin embargo`},
+  {content: `En realidad`},
+  {content: `sino`},
+  {content: `En conclusión`},
+  {content: `sino`}
+];
 
 
 
@@ -204,73 +185,182 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
+    Tema: Algunos consideran que las personas que viven en bloques de pisos no deberían tener perros. Escribe un ensayo en el que presentes tu opinión sobre este tema, refiriéndote a garantizar las condiciones adecuadas para los animales y a la relación de los dueños de perros con los vecinos.
   </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
+              <p>TIPO : Texto de Opinión</p>
               <div className={styles.boxText}>
-                
-                  <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
-  
-                  <span 
-                  className={`${styles.labelOutline}
-    ${selectedObject === 1 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(0) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() => {if (taskFinished) return;  setSelectedObject(1)}}
-                >
-                  {answers[1] || "________________________________________________"}
 
-                </span>
-                <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
-                  <span
-                  className={`${styles.labelOutline}
-    ${selectedObject === 2 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() => {if (taskFinished) return;  setSelectedObject(2)}}
-                >
-                  {answers[2] || "_____________________________________________________"}
+Algunas personas consideran que quienes viven en bloques de pisos no deberían tener perros.
 
-                </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
+<span
+className={`${styles.labelOutline}
+${selectedObject === 1 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(0) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(1)}}
+>
+{answers[1] || "____________"}
+</span>
+
+ellas, este tipo de vivienda no ofrece las condiciones adecuadas para los animales y,
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 2 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(2)}}
+>
+{answers[2] || "____________"}
+</span>
+
+puede generar conflictos entre vecinos.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 3 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(3)}}
+>
+{answers[3] || "________________"}
+</span>
+
+tener un perro en un bloque es perfectamente posible, siempre que el dueño sea responsable.
+
 <p/>
-        <span
-                  className={`${styles.labelOutline}
-    ${selectedObject === 3 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() =>{if (taskFinished) return;  setSelectedObject(3)}}
-                >
-                  {answers[3] || "___________________________________________________________________"}
 
-                </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
-                 <span
-                  className={`${styles.labelOutline}
-    ${selectedObject === 4 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() => {if (taskFinished) return;  setSelectedObject(4)}}
-                >
-                  {answers[4] || "___________________________________________________________________"}
+<span
+className={`${styles.labelOutline}
+${selectedObject === 4 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(4)}}
+>
+{answers[4] || "________________"}
+</span>
 
-                </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
-        
-              </div>
-              </div>
+es cierto que un perro necesita espacio, ejercicio y atención,
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 5 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(4) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(5)}}
+>
+{answers[5] || "____________"}
+</span>
+
+esto no depende tanto del tamaño de la vivienda como del compromiso del propietario.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 6 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(5) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(6)}}
+>
+{answers[6] || "____________"}
+</span>
+
+muchas familias que viven en pisos sacan a sus perros varias veces al día.
+
+<p/>
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 7 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(6) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(7)}}
+>
+{answers[7] || "________________"}
+</span>
+
+si los dueños ofrecen las condiciones necesarias, un perro puede vivir feliz incluso en un piso pequeño.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 8 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(7) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(8)}}
+>
+{answers[8] || "____________"}
+</span>
+
+en muchas ciudades europeas esta es la situación más habitual.
+
+<p/>
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 9 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(8) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(9)}}
+>
+{answers[9] || "________________"}
+</span>
+
+la relación con los vecinos es otro aspecto importante.
+
+Un perro mal educado puede causar problemas.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 10 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(9) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(10)}}
+>
+{answers[10] || "____________"}
+</span>
+
+también existen numerosos ejemplos de dueños responsables.
+
+<p/>
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 11 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(10) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(11)}}
+>
+{answers[11] || "____________"}
+</span>
+
+los conflictos suelen aparecer no por el perro,
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 12 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(11) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(12)}}
+>
+{answers[12] || "____________"}
+</span>
+
+por la falta de responsabilidad del propietario.
+
+<p/>
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 13 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(12) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(13)}}
+>
+{answers[13] || "________________"}
+</span>
+
+vivir en un bloque no debería ser un obstáculo para tener un perro.
+
+Lo fundamental no es el tipo de vivienda,
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 14 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(13) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(14)}}
+>
+{answers[14] || "____________"}
+</span>
+
+el comportamiento del dueño.
+
+</div>
         </div>
         </div>
         
@@ -311,7 +401,7 @@ la educación online con métodos presenciales, para que se logre un
   answersShuffled.map((question) => {
 
         return (
-          <div className = {taskFinished ? styles.boxAnswerDisable : styles.boxAnswer}
+          <div className = {taskFinished ? styles.boxAnswerDisableNoSetSize : styles.boxAnswerNoSetSize}
           onClick = {() => handleWordClick(question.content)}>
             {question.content}
             </div>
@@ -323,8 +413,8 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 </div>
 
-      <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+       <div className={styles.buttonsBottom}>
+      <button onClick={() => navigate("/TextCompletion7conector")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,10 +426,12 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
+        <button onClick={() => navigate("/TextCompletion9conector")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Next}</button>
       </div>
+
+        
 
     </>
   );
@@ -365,4 +457,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default TextCompletion8conector;

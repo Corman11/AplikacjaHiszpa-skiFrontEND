@@ -15,6 +15,8 @@
   border-radius: 12px;
   transition: 0.3s;
   margin: auto; /* do ustawienia elementu na środku strony*/
+
+  
 }
 
 /* Efekt po najechaniu na duży kwadrat: lekkie powiększenie i zmiana koloru */
@@ -46,19 +48,24 @@
   outline: none;
   cursor: pointer;
   background-color: white;
+  white-space: pre-line;
+  
 }
 
 .labelOutlineActive  {
   border: 2px solid cyan;
+  white-space: pre-line;
 }
 
 
 .labelOutlineSet  {
   border: 2px solid green;
+  white-space: pre-line;
 }
 
 .labelOutlineWrong  {
   border: 2px solid red;
+  white-space: pre-line;
 }
 
 /* Styl dla elementu przeciąganego — duże padding, kolor, zmiana kursora */
@@ -124,6 +131,52 @@
   opacity: 0.4;
 }
 
+.boxAnswerNoSetSize {
+   width: 150px;
+  /* min-height: 120px; */ 
+  background-color: #f2f2f2;
+  border: 3px solid #555;
+  border-radius: 12px;
+  transition: 0.3s;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.boxAnswerDisableNoSetSize {
+      width: 150px;
+  padding: 3px;
+
+  background-color: #f2f2f2;
+  border: 1px solid #555;
+  border-radius: 12px;
+  transition: 0.3s;
+  cursor: default;
+  opacity: 0.4;
+}
+
+.boxAnswerNoSetSizeCartaFormal {
+   width: 450px;
+  /* min-height: 120px; */ 
+  background-color: #f2f2f2;
+  border: 3px solid #555;
+  border-radius: 12px;
+  transition: 0.3s;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.boxAnswerDisableNoSetSizeCartaFormal {
+      width: 450px;
+  padding: 3px;
+
+  background-color: #f2f2f2;
+  border: 1px solid #555;
+  border-radius: 12px;
+  transition: 0.3s;
+  cursor: default;
+  opacity: 0.4;
+}
+
 
 .span-style{
   background-color: white;
@@ -172,11 +225,14 @@
 
   width: 600px;
   height: 400;
-  background-color: #f2f2f2;
+  background-color: #c5c9fc;
+  
   border: 3px solid #555;
   border-radius: 12px;
   transition: 0.3s;
   margin: auto; /* do ustawienia elementu na środku strony*/
+    padding: 10px;
+
 }
 
 

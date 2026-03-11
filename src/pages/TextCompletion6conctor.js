@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function TextCompletion6conector() {
 
 
    //Sounds
@@ -107,39 +107,20 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
-
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
-
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
-
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
-
-  ];
-
-  const texto= `Cada vez más jóvenes eligen su carrera 
-  universitaria pensando en las exigencias del mercado laboral.
-<Esta tendencia genera un debate interesante, ya que presenta tanto beneficios 
-   como inconvenientes. Existen tantas ventajas como desventajas en este tipo de decisiones.>
-
-Por un lado, elegir una carrera con alta demanda laboral aumenta las posibilidades 
-de conseguir empleo estable y bien remunerado. Según un informe del Ministerio de Educación, 
-los graduados en ingeniería y tecnología tienen tasas de inserción superiores al 80 %. 
-
-<Este dato demuestra que seguir las necesidades del mercado puede garantizar seguridad
- económica, algo muy valorado en la sociedad actual.>
-
-Por otro lado, esta elección puede provocar frustración si la persona no siente interés 
-por la profesión. Imaginemos a alguien que estudió informática solo por las oportunidades 
-laborales, pero que siempre había soñado con ser profesor de historia. <Si hubiera seguido 
-sus verdaderas pasiones, quizá habría sido más feliz, aunque con menos estabilidad. 
-Que los jóvenes prioricen únicamente el mercado hace que se pierda la motivación y la creatividad.>
-
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas importantes, como la falta de satisfacción personal. 
- <Por eso, conviene que cada estudiante reflexione antes de decidir,
-  para que su elección no dependa solo del mercado, sino también de sus intereses.>`;
-
+  {content: `En mi opinión`},
+  {content: `aunque`},
+  {content: `En primer lugar`},
+  {content: `Por ejemplo`},
+  {content: `Además`},
+  {content: `Por lo tanto`},
+  {content: `Sin embargo`},
+  {content: `Aunque`},
+  {content: `Además`},
+  {content: `porque`},
+  {content: `En conclusión`},
+  {content: `pero`},
+  {content: `Por eso`}
+];
 
 
 
@@ -204,73 +185,169 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
-  </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
-              <div className={styles.boxText}>
-                
-                  <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
-  
-                  <span 
-                  className={`${styles.labelOutline}
-    ${selectedObject === 1 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(0) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() => {if (taskFinished) return;  setSelectedObject(1)}}
-                >
-                  {answers[1] || "________________________________________________"}
-
-                </span>
-                <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
-                  <span
-                  className={`${styles.labelOutline}
-    ${selectedObject === 2 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() => {if (taskFinished) return;  setSelectedObject(2)}}
-                >
-                  {answers[2] || "_____________________________________________________"}
-
-                </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
+Tema: Muchos estudiantes que terminan la escuela secundaria se preguntan: ¿vale la pena ir a la universidad? Escribe un ensayo en el que expreses tu opinión sobre este tema, refiriéndote a aspectos tales como:
 <p/>
-        <span
-                  className={`${styles.labelOutline}
-    ${selectedObject === 3 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() =>{if (taskFinished) return;  setSelectedObject(3)}}
-                >
-                  {answers[3] || "___________________________________________________________________"}
+<li>el desarrollo de los propios intereses</li>
 
-                </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
-                 <span
-                  className={`${styles.labelOutline}
-    ${selectedObject === 4 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() => {if (taskFinished) return;  setSelectedObject(4)}}
-                >
-                  {answers[4] || "___________________________________________________________________"}
+<li>las finanzas</li>  </h3>
+               <p>TIPO : Texto de Opinión</p>
+              <div className={styles.boxText}>
 
-                </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
-        
-              </div>
-              </div>
+Muchos alumnos que terminan la escuela secundaria se preguntan si merece la pena estudiar una carrera universitaria. 
+Es una decisión importante que puede influir en su futuro profesional y personal.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 1 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(0) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(1)}}
+>
+{answers[1] || "____________________________"}
+</span>
+
+, continuar la educación en la universidad es una opción valiosa,
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 2 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(2)}}
+>
+{answers[2] || "____________"}
+</span>
+
+no siempre es la elección adecuada para todos.
+
+<p/>
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 3 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(3)}}
+>
+{answers[3] || "__________________"}
+</span>
+
+, ir a la universidad permite desarrollar los propios intereses de una manera más profunda.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 4 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(4)}}
+>
+{answers[4] || "____________"}
+</span>
+
+, un estudiante apasionado por la biología puede asistir a laboratorios, participar en proyectos de investigación o asistir a conferencias especializadas.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 5 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(4) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(5)}}
+>
+{answers[5] || "____________"}
+</span>
+
+, gracias al contacto con profesores y compañeros con inquietudes similares, es posible descubrir nuevos campos y ampliar la curiosidad intelectual.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 6 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(5) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(6)}}
+>
+{answers[6] || "________________"}
+</span>
+
+, la universidad no solo ofrece conocimientos, sino también un espacio para crecer y aprender a pensar de forma crítica.
+
+<p/>
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 7 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(6) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(7)}}
+>
+{answers[7] || "________________"}
+</span>
+
+, también es necesario considerar el aspecto económico.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 8 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(7) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(8)}}
+>
+{answers[8] || "____________"}
+</span>
+
+en muchos países europeos los estudios son relativamente accesibles, siguen existiendo gastos importantes, como el alojamiento o los materiales.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 9 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(8) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(9)}}
+>
+{answers[9] || "____________"}
+</span>
+
+, algunos jóvenes prefieren empezar a trabajar pronto para ganar independencia económica.
+
+Un ejemplo frecuente es el de quienes eligen una formación profesional
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 10 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(9) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(10)}}
+>
+{answers[10] || "____________"}
+</span>
+
+les permite entrar antes al mercado laboral y obtener ingresos.
+
+<p/>
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 11 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(10) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(11)}}
+>
+{answers[11] || "________________"}
+</span>
+
+, estudiar en la universidad puede abrir muchas puertas y favorecer el desarrollo personal,
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 12 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(11) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(12)}}
+>
+{answers[12] || "____________"}
+</span>
+
+no siempre es la opción ideal para todos.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 13 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(12) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(13)}}
+>
+{answers[13] || "____________"}
+</span>
+
+, cada alumno debe valorar sus intereses, su situación económica y sus objetivos antes de tomar una decisión tan importante.
+
+</div>
         </div>
         </div>
         
@@ -311,7 +388,7 @@ la educación online con métodos presenciales, para que se logre un
   answersShuffled.map((question) => {
 
         return (
-          <div className = {taskFinished ? styles.boxAnswerDisable : styles.boxAnswer}
+          <div className = {taskFinished ? styles.boxAnswerDisableNoSetSize : styles.boxAnswerNoSetSize}
           onClick = {() => handleWordClick(question.content)}>
             {question.content}
             </div>
@@ -324,9 +401,7 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 
       <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
-          disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
-          >{ExerciseInstructions.exersize1Previous}</button>
+      
 
       <button onClick={() => window.location.reload(false)}>Rozpocznij zadanie od nowa</button>
       <button onClick={giveUpShowAnswers}>Poddaj Się - Sprawdź odpowiedzi</button>
@@ -336,9 +411,10 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
+<button onClick={() => navigate("/TextCompletion7conector")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Next}</button>
+        
       </div>
 
     </>
@@ -365,4 +441,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default TextCompletion6conector;

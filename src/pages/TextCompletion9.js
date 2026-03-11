@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function TextCompletion9() {
 
 
    //Sounds
@@ -107,13 +107,13 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
+  {content: `aumentar los castigos puede tener ciertos beneficios, pero no debería ser la única solución, ya que el problema es más complejo y requiere un enfoque equilibrado`},
 
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
+  {content:`Por ejemplo, cuando un joven comete repetidos actos de vandalismo o agresiones, es necesario reaccionar de manera clara para evitar que vuelva a hacerlo. Un castigo más severo puede actuar como advertencia para otros adolescentes y reducir la delincuencia en determinadas zonas.`},
 
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
+  {content:`Sin embargo, el aspecto de la justicia social exige mirar más allá del castigo. Muchos menores que cometen delitos provienen de entornos difíciles, donde faltan apoyo familiar, educación o estabilidad emocional.`},
 
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
+  {content:` Aunque endurecer las penas puede aumentar la seguridad, no es suficiente para solucionar el problema.`}
 
   ];
 
@@ -204,14 +204,21 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
+    Tema: Cada vez más personas exigen el endurecimiento de las penas para los delincuentes juveniles. Escribe un ensayo en el que presentes tu opinión sobre este tema, teniendo en cuenta los argumentos referidos a:
+
+la seguridad
+
+la justicia social.
   </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
+              <p>TIPO : Texto de Opinión</p>
               <div className={styles.boxText}>
                 
                   <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
+                 En los últimos años, cada vez más personas
+  piden endurecer las penas para los delincuentes menores 
+  de edad. Argumentan que las medidas actuales no son 
+  suficientes para frenar la violencia juvenil. En mi 
+  opinión,
   
                   <span 
                   className={`${styles.labelOutline}
@@ -223,52 +230,53 @@ const navigate = useNavigate();
 
                 </span>
                 <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
+        Además, si un joven representa un peligro real para 
+ los demás, medidas más estrictas pueden garantizar la 
+ tranquilidad de la comunidad. <p/>
                   <span
                   className={`${styles.labelOutline}
     ${selectedObject === 2 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(2)}}
                 >
-                  {answers[2] || "_____________________________________________________"}
+                  {answers[2] || "_____________________________________________"}
 
                 </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
-<p/>
+      En estos casos, una 
+ pena muy dura podría empeorar su situación en lugar de 
+ ayudarles a cambiar. Por eso, programas educativos, apoyo 
+ psicológico y actividades de resocialización pueden 
+ resultar más eficaces. Un ejemplo claro son los centros 
+ juveniles que combinan disciplina con tutorías y 
+ orientación profesional.  <p/>  
+ En conclusión,
         <span
                   className={`${styles.labelOutline}
     ${selectedObject === 3 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() =>{if (taskFinished) return;  setSelectedObject(3)}}
                 >
-                  {answers[3] || "___________________________________________________________________"}
+                  {answers[3] || "______________________________________________________"}
 
                 </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
+           <br/>     
+Asimismo, en las ciudades más visitadas aparecen problemas 
+como el aumento del precio de la vivienda, la saturación del
+ transporte público y la pérdida de la tranquilidad para los
+  habitantes. A veces, el turismo masivo transforma tanto los lugares que estos pierden parte de su autenticidad.
+                 <br/>
                  <span
                   className={`${styles.labelOutline}
     ${selectedObject === 4 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(4)}}
                 >
-                  {answers[4] || "___________________________________________________________________"}
+                  {answers[4] || "_____________________________________________________"}
 
                 </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
-        
+        Lo más justo y eficaz es combinar medidas firmes con apoyo
+  educativo, ofreciendo a los jóvenes una oportunidad real 
+  de mejorar su conducta y su futuro. 
               </div>
               </div>
         </div>
@@ -323,8 +331,8 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 </div>
 
-      <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+       <div className={styles.buttonsBottom}>
+      <button onClick={() => navigate("/TextCompletion8")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,7 +344,7 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
+        <button onClick={() => navigate("/TextCompletion10")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Next}</button>
       </div>
@@ -365,4 +373,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default TextCompletion9;

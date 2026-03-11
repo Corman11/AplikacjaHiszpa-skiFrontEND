@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function Articulo5() {
 
 
    //Sounds
@@ -107,13 +107,20 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
+  {content: `Pocas decisiones han generado tanta polémica en nuestro centro como la reciente prohibición de usar teléfonos móviles durante la jornada escolar. La medida, anunciada de un día para otro, provocó una reacción inmediata entre los estudiantes, que organizaron una protesta que aún da que hablar. Como testigo directo de la situación, creo que vale la pena contar cómo se desarrollaron los hechos y reflexionar sobre ellos.
+`},
 
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
+  {content:`La protesta comenzó a primera hora de la mañana. Un grupo numeroso de alumnos se reunió en el patio con pancartas y mensajes en defensa del uso responsable del móvil. Además, se repartieron folletos explicando que los teléfonos pueden ser útiles para consultar diccionarios, tomar fotos de apuntes o comunicarse en caso de emergencia. A pesar de que la manifestación fue pacífica, algunos profesores mostraron cierta incomodidad, mientras que otros observaron la escena con interés, conscientes de que se trataba de una expresión legítima de opinión.
 
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
+`},
 
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
+  {content:`En cuanto a mi postura, considero que la reacción estudiantil fue comprensible. Por un lado, es verdad que los móviles pueden distraer, pero un veto total me parece excesivo. Sería más razonable que se establecieran normas claras para utilizarlos solo en momentos autorizados, como durante proyectos educativos o en los descansos. De este modo, se encontraría un equilibrio entre disciplina y autonomía.
+
+`},
+
+  {content:`En conclusión, la protesta dejó claro que los estudiantes desean participar en las decisiones que afectan a su vida escolar. Escuchar sus argumentos puede ser el primer paso para construir una convivencia más justa y equilibrada.
+`},
+
 
   ];
 
@@ -204,15 +211,12 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
-  </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
+    Tema: En tu escuela se ha introducido la prohibición de usar teléfonos móviles. Los jóvenes han organizado una acción de protesta. Escribe un artículo para la página web de la escuela en el que relates el desarrollo de la acción y presentes y justifiques tu postura en este conflicto. </h3>
+              <p>TIPO : Artículo</p>
               <div className={styles.boxText}>
                 
                   <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
-  
+                 
                   <span 
                   className={`${styles.labelOutline}
     ${selectedObject === 1 ? styles.labelOutlineActive : ""}
@@ -223,9 +227,6 @@ const navigate = useNavigate();
 
                 </span>
                 <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
                   <span
                   className={`${styles.labelOutline}
     ${selectedObject === 2 ? styles.labelOutlineActive : ""}
@@ -235,11 +236,9 @@ const navigate = useNavigate();
                   {answers[2] || "_____________________________________________________"}
 
                 </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
-<p/>
-        <span
+                                <p/>
+
+         <span
                   className={`${styles.labelOutline}
     ${selectedObject === 3 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
@@ -248,12 +247,8 @@ con recursos tradicionales, habría aprendido mejor.
                   {answers[3] || "___________________________________________________________________"}
 
                 </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
+                <p/>
+ <p/>
                  <span
                   className={`${styles.labelOutline}
     ${selectedObject === 4 ? styles.labelOutlineActive : ""}
@@ -263,12 +258,13 @@ portantes, como la falta de satisfacción personal.
                   {answers[4] || "___________________________________________________________________"}
 
                 </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
         
+
+     
+
+                
+
+                
               </div>
               </div>
         </div>
@@ -324,7 +320,7 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 
       <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+      <button onClick={() => navigate("/Articulo4")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,9 +332,7 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
-          disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
-          >{ExerciseInstructions.exersize1Next}</button>
+        
       </div>
 
     </>
@@ -365,4 +359,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default Articulo5;

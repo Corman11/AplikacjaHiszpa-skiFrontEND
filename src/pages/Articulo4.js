@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function Articulo4() {
 
 
    //Sounds
@@ -107,13 +107,20 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
+  {content: `En una época en la que el ruido, la prisa y las pantallas forman parte de nuestra vida diaria, cada vez más personas buscan algo completamente diferente para sus vacaciones: silencio, naturaleza y aislamiento. Lo que antes parecía impensable —pasar unos días lejos de ciudades y de complejos turísticos— se ha convertido hoy en una tendencia creciente que atrae tanto a jóvenes como a adultos.
+`},
 
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
+  {content:`Entre las principales razones de este fenómeno destaca, en primer lugar, el deseo de descansar de la tecnología. Muchas personas quieren alejarse de las redes sociales y del estrés laboral, que incluso durante las vacaciones sigue presente en los teléfonos móviles. Además, quienes viven en grandes ciudades buscan lugares donde puedan respirar aire puro, dormir sin tráfico y reconectar con lo esencial. También influye el interés por un turismo más ecológico y respetuoso con el entorno, muy valorado en la actualidad.
 
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
+`},
 
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
+  {content:`Un lugar que cumpliría todas estas expectativas es un pequeño refugio de montaña situado en un valle aislado. Imaginemos una zona rodeada de bosques, sin carreteras cercanas, donde solo se escucha el viento y el agua de un arroyo. Allí se podría practicar senderismo, observar estrellas por la noche y disfrutar de actividades sencillas, como leer junto a una chimenea o cocinar al aire libre. Sería, sin duda, el destino perfecto para quienes buscan desconectar por completo del mundo moderno.
+
+`},
+
+  {content:`En conclusión, este tipo de vacaciones responde a una necesidad real: detenerse, respirar y recuperar el equilibrio. Y quizás, lejos de la civilización, encontremos justo lo que más echamos de menos.`
+},
+
 
   ];
 
@@ -204,15 +211,12 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
-  </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
+    Tema: Hoy en día, la gente suele decidir pasar sus vacaciones lejos de las ciudades y los centros turísticos, en lugares aislados de la civilización. Escribe un artículo en el que analices las causas de este fenómeno y describas un lugar que cumpla con las expectativas de las personas interesadas en este tipo de viaje.</h3>
+              <p>TIPO : Artículo</p>
               <div className={styles.boxText}>
                 
                   <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
-  
+                 
                   <span 
                   className={`${styles.labelOutline}
     ${selectedObject === 1 ? styles.labelOutlineActive : ""}
@@ -223,9 +227,6 @@ const navigate = useNavigate();
 
                 </span>
                 <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
                   <span
                   className={`${styles.labelOutline}
     ${selectedObject === 2 ? styles.labelOutlineActive : ""}
@@ -235,11 +236,9 @@ const navigate = useNavigate();
                   {answers[2] || "_____________________________________________________"}
 
                 </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
-<p/>
-        <span
+                                <p/>
+
+         <span
                   className={`${styles.labelOutline}
     ${selectedObject === 3 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
@@ -248,12 +247,8 @@ con recursos tradicionales, habría aprendido mejor.
                   {answers[3] || "___________________________________________________________________"}
 
                 </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
+                <p/>
+ <p/>
                  <span
                   className={`${styles.labelOutline}
     ${selectedObject === 4 ? styles.labelOutlineActive : ""}
@@ -263,12 +258,13 @@ portantes, como la falta de satisfacción personal.
                   {answers[4] || "___________________________________________________________________"}
 
                 </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
         
+
+     
+
+                
+
+                
               </div>
               </div>
         </div>
@@ -324,7 +320,7 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 
       <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+      <button onClick={() => navigate("/Articulo3")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,7 +332,7 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
+         <button onClick={() => navigate("/Articulo5")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Next}</button>
       </div>
@@ -365,4 +361,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default Articulo4;

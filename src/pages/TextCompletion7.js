@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function TextCompletion7() {
 
 
    //Sounds
@@ -107,13 +107,13 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
+  {content: `decidir alquilar un piso puede ser una buena solución para muchos, aunque también tiene ciertos inconvenientes que deben considerarse con cuidado.`},
 
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
+  {content:`Por ejemplo, un joven que encuentra trabajo en otra ciudad puede mudarse rápidamente sin tener que vender una propiedad. Además, alquilar permite conocer diferentes barrios y adaptarse a distintos entornos.`},
 
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
+  {content:`Por otra parte, el aspecto económico es fundamental. Por un lado, alquilar evita los enormes gastos iniciales que supone comprar una vivienda, como la entrada o la hipoteca.`},
 
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
+  {content:` En conclusión, alquilar un piso puede ser una opción práctica y flexible,`}
 
   ];
 
@@ -204,14 +204,21 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
+    Tema: En muchos países, cada vez más personas abandonan la idea de comprar una vivienda para optar por el alquiler. ¿Es una buena idea? Escribe un ensayo en el que expreses tu opinión sobre este fenómeno, refiriéndote a los siguientes aspectos:
+<p/>
+<li>los vínculos sociales</li>
+
+<li>las finanzas</li>
   </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
+              <p>TIPO : Texto de Opinión</p>
               <div className={styles.boxText}>
                 
                   <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
+                En muchos países, cada vez más
+   personas renuncian a la idea de comprar una vivienda 
+   y prefieren alquilarla. Este cambio se debe a razones
+    económicas, pero también a un estilo de vida más
+     flexible. En mi opinión,
   
                   <span 
                   className={`${styles.labelOutline}
@@ -223,52 +230,53 @@ const navigate = useNavigate();
 
                 </span>
                 <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
+         Para empezar, en cuanto a las relaciones sociales, 
+vivir de alquiler ofrece una mayor movilidad.    <p/>
                   <span
                   className={`${styles.labelOutline}
     ${selectedObject === 2 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(2)}}
                 >
-                  {answers[2] || "_____________________________________________________"}
+                  {answers[2] || "_____________________________________________"}
 
                 </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
-<p/>
+      Sin embargo, también puede dificultar crear vínculos 
+fuertes con los vecinos, ya que los inquilinos suelen 
+cambiar con frecuencia y no siempre se sienten parte 
+de la comunidad local.<p/>
         <span
                   className={`${styles.labelOutline}
     ${selectedObject === 3 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() =>{if (taskFinished) return;  setSelectedObject(3)}}
                 >
-                  {answers[3] || "___________________________________________________________________"}
+                  {answers[3] || "_________________________________________________________"}
 
                 </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
+                
+Esto resulta especialmente útil para quienes 
+ empiezan su vida profesional y aún no tienen estabilidad 
+ financiera. Por otro lado, a largo plazo, 
+ pagar un alquiler puede ser menos rentable. 
+ Por ejemplo, una persona que pague durante años 
+ una cuota elevada quizá gaste más dinero que alguien 
+ que compra un piso y termina de pagar la hipoteca.
+                 
                  <span
                   className={`${styles.labelOutline}
     ${selectedObject === 4 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(4)}}
                 >
-                  {answers[4] || "___________________________________________________________________"}
+                  {answers[4] || "_____________________________________________________"}
 
                 </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
-        
+       pero no siempre es la más 
+ventajosa desde el punto de vista económico o social.
+ Por ello, cada persona debe analizar su situación
+  y sus necesidades antes de tomar una decisión 
+  tan importante.
               </div>
               </div>
         </div>
@@ -324,7 +332,7 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 
       <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+      <button onClick={() => navigate("/TextCompletion6")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,7 +344,7 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
+        <button onClick={() => navigate("/TextCompletion8")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Next}</button>
       </div>
@@ -365,4 +373,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default TextCompletion7;

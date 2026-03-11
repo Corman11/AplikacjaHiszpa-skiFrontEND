@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function TextCompletion10conector() {
 
 
    //Sounds
@@ -105,41 +105,18 @@ const [answers, setAnswers] = useState({
   2: "",
 });
 
-
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
-
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
-
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
-
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
-
-  ];
-
-  const texto= `Cada vez más jóvenes eligen su carrera 
-  universitaria pensando en las exigencias del mercado laboral.
-<Esta tendencia genera un debate interesante, ya que presenta tanto beneficios 
-   como inconvenientes. Existen tantas ventajas como desventajas en este tipo de decisiones.>
-
-Por un lado, elegir una carrera con alta demanda laboral aumenta las posibilidades 
-de conseguir empleo estable y bien remunerado. Según un informe del Ministerio de Educación, 
-los graduados en ingeniería y tecnología tienen tasas de inserción superiores al 80 %. 
-
-<Este dato demuestra que seguir las necesidades del mercado puede garantizar seguridad
- económica, algo muy valorado en la sociedad actual.>
-
-Por otro lado, esta elección puede provocar frustración si la persona no siente interés 
-por la profesión. Imaginemos a alguien que estudió informática solo por las oportunidades 
-laborales, pero que siempre había soñado con ser profesor de historia. <Si hubiera seguido 
-sus verdaderas pasiones, quizá habría sido más feliz, aunque con menos estabilidad. 
-Que los jóvenes prioricen únicamente el mercado hace que se pierda la motivación y la creatividad.>
-
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas importantes, como la falta de satisfacción personal. 
- <Por eso, conviene que cada estudiante reflexione antes de decidir,
-  para que su elección no dependa solo del mercado, sino también de sus intereses.>`;
-
+  {content: `aunque`},
+  {content: `En mi opinión`},
+  {content: `En primer lugar`},
+  {content: `Por ejemplo`},
+  {content: `Además`},
+  {content: `Sin embargo`},
+  {content: `Aunque`},
+  {content: `Por ejemplo`},
+  {content: `Por eso`},
+  {content: `En conclusión`}
+];
 
 
 
@@ -204,73 +181,129 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
+        Tema: Un vale para realizar un salto de puenting o un salto en paracaídas se ha convertido últimamente en un regalo de cumpleaños popular entre los jóvenes. ¿Es un regalo así una buena idea? Escribe un ensayo sobre este tema, considerándolo desde el punto de vista de la persona que compra el regalo y de la persona que lo recibe.
+
   </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
-              <div className={styles.boxText}>
-                
-                  <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
-  
-                  <span 
-                  className={`${styles.labelOutline}
-    ${selectedObject === 1 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(0) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() => {if (taskFinished) return;  setSelectedObject(1)}}
-                >
-                  {answers[1] || "________________________________________________"}
+              <p>TIPO : Texto de Opinión</p>
+             <div className={styles.boxText}>
 
-                </span>
-                <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
-                  <span
-                  className={`${styles.labelOutline}
-    ${selectedObject === 2 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() => {if (taskFinished) return;  setSelectedObject(2)}}
-                >
-                  {answers[2] || "_____________________________________________________"}
+En los últimos años, regalar un cupón para realizar un salto en bungee, un salto de puenting o un salto en paracaídas se ha convertido en una idea muy popular entre los jóvenes. Muchas personas consideran que este tipo de regalo es original y emocionante,
 
-                </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
+<span
+className={`${styles.labelOutline}
+${selectedObject === 1 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(0) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(1)}}
+>
+{answers[1] || "____________"}
+</span>
+
+otros lo ven como algo arriesgado.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 2 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(2)}}
+>
+{answers[2] || "________________"}
+</span>
+
+puede ser un buen regalo, siempre que se tengan en cuenta tanto las expectativas de quien lo compra como los deseos de quien lo recibe.
+
 <p/>
-        <span
-                  className={`${styles.labelOutline}
-    ${selectedObject === 3 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() =>{if (taskFinished) return;  setSelectedObject(3)}}
-                >
-                  {answers[3] || "___________________________________________________________________"}
 
-                </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
-                 <span
-                  className={`${styles.labelOutline}
-    ${selectedObject === 4 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() => {if (taskFinished) return;  setSelectedObject(4)}}
-                >
-                  {answers[4] || "___________________________________________________________________"}
+<span
+className={`${styles.labelOutline}
+${selectedObject === 3 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(3)}}
+>
+{answers[3] || "________________"}
+</span>
 
-                </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
-        
-              </div>
-              </div>
+se trata de un regalo diferente, que no se olvida fácilmente.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 4 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(4)}}
+>
+{answers[4] || "____________"}
+</span>
+
+muchos jóvenes prefieren vivir una aventura antes que recibir un objeto material.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 5 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(4) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(5)}}
+>
+{answers[5] || "____________"}
+</span>
+
+este tipo de actividades permite demostrar cariño de una manera creativa.
+
+<p/>
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 6 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(5) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(6)}}
+>
+{answers[6] || "____________"}
+</span>
+
+a algunos les encantan las emociones fuertes, no todos disfrutan de las alturas.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 7 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(6) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(7)}}
+>
+{answers[7] || "____________"}
+</span>
+
+un regalo de este tipo puede generar estrés o incomodidad.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 8 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(7) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(8)}}
+>
+{answers[8] || "____________"}
+</span>
+
+es importante conocer bien a la persona antes de elegir este tipo de regalo.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 9 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(8) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(9)}}
+>
+{answers[9] || "____________"}
+</span>
+
+un salto en bungee o en paracaídas puede ser un regalo fantástico.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 10 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(9) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(10)}}
+>
+{answers[10] || "____________"}
+</span>
+
+puede ser un regalo fantástico para quienes aman la aventura.
+
+</div>
         </div>
         </div>
         
@@ -311,7 +344,7 @@ la educación online con métodos presenciales, para que se logre un
   answersShuffled.map((question) => {
 
         return (
-          <div className = {taskFinished ? styles.boxAnswerDisable : styles.boxAnswer}
+          <div className = {taskFinished ? styles.boxAnswerDisableNoSetSize : styles.boxAnswerNoSetSize}
           onClick = {() => handleWordClick(question.content)}>
             {question.content}
             </div>
@@ -323,8 +356,8 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 </div>
 
-      <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+       <div className={styles.buttonsBottom}>
+      <button onClick={() => navigate("/TextCompletion9conector")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,10 +369,8 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
-          disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
-          >{ExerciseInstructions.exersize1Next}</button>
-      </div>
+        </div>
+
 
     </>
   );
@@ -365,4 +396,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default TextCompletion10conector;

@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function TextCompletion5() {
 
 
    //Sounds
@@ -107,13 +107,21 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
+  {content: `El desarrollo del turismo tiene ventajas importantes,
+   pero también provoca ciertos problemas que deben tenerse 
+   en cuenta.`},
 
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
+  {content:`Además, el interés de los turistas por 
+conocer diferentes culturas favorece el intercambio cultural 
+y ayuda a valorar mejor las tradiciones locales.`},
 
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
+  {content:`Sin embargo, no todo son aspectos positivos. El crecimiento 
+turístico también puede causar daños al medioambiente, como 
+la contaminación o la destrucción de espacios naturales.`},
 
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
+  {content:` En conclusión, el desarrollo del turismo ofrece ventajas muy 
+importantes, sobre todo económicas, pero también genera 
+desventajas que no se pueden ignorar.`}
 
   ];
 
@@ -204,14 +212,16 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
+    Tema: Las ventajas y desventajas del turismo masivo.
   </h3>
               <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
               <div className={styles.boxText}>
                 
                   <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
+                 En los últimos años, el turismo ha 
+  aumentado de manera significativa en muchos países, 
+  y este fenómeno ha generado un debate sobre sus efectos 
+  reales.
   
                   <span 
                   className={`${styles.labelOutline}
@@ -223,52 +233,51 @@ const navigate = useNavigate();
 
                 </span>
                 <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
+         Por un lado, el turismo trae numerosos beneficios económicos 
+y sociales. Gracias a la llegada de visitantes, crece 
+la demanda de hoteles, restaurantes y servicios culturales, 
+lo que crea nuevos empleos y mejora la calidad de vida de la 
+población local.   <p/>
                   <span
                   className={`${styles.labelOutline}
     ${selectedObject === 2 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(2)}}
                 >
-                  {answers[2] || "_____________________________________________________"}
+                  {answers[2] || "_____________________________________________"}
 
                 </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
-<p/>
+      En muchos lugares, el turismo se ha convertido en una fuente 
+principal de ingresos.<p/>
         <span
                   className={`${styles.labelOutline}
     ${selectedObject === 3 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() =>{if (taskFinished) return;  setSelectedObject(3)}}
                 >
-                  {answers[3] || "___________________________________________________________________"}
+                  {answers[3] || "_________________________________________________________"}
 
                 </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
+                
+Asimismo, en las ciudades más visitadas aparecen problemas 
+como el aumento del precio de la vivienda, la saturación del
+ transporte público y la pérdida de la tranquilidad para los
+  habitantes. A veces, el turismo masivo transforma tanto los
+   lugares que estos pierden parte de su autenticidad.
+                 
                  <span
                   className={`${styles.labelOutline}
     ${selectedObject === 4 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(4)}}
                 >
-                  {answers[4] || "___________________________________________________________________"}
+                  {answers[4] || "_____________________________________________________"}
 
                 </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
-        
+        Por eso, es necesario 
+buscar un equilibrio que permita disfrutar de los beneficios
+ del turismo sin perjudicar a las comunidades locales ni al 
+ entorno natural. 
               </div>
               </div>
         </div>
@@ -324,7 +333,7 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 
       <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+      <button onClick={() => navigate("/TextCompletion4")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,9 +345,7 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
-          disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
-          >{ExerciseInstructions.exersize1Next}</button>
+        
       </div>
 
     </>
@@ -365,4 +372,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default TextCompletion5;

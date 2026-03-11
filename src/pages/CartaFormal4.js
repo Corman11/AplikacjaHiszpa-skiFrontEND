@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function CartaFormal4() {
 
 
    //Sounds
@@ -107,13 +107,33 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
+  {content: `A la redacción del periódico escolar\n
+[Nombre del periódico]\n
+[Nombre del centro]\n`},
 
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
+  {content:`Estimados redactores:
+`},
 
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
+  {content:`Os escribo porque acabo de volver del campamento juvenil organizado por nuestra escuela y, sinceramente, me gustaría compartir mi opinión, ya que muchos compañeros sienten lo mismo. Considero que el campamento no fue satisfactorio y creo que es importante explicar las razones para evitar problemas similares en el futuro.
+`},
 
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
+  {content:`En primer lugar, la organización dejó mucho que desear. Las actividades anunciadas en el programa no se realizaron tal como se había prometido. Por ejemplo, la excursión de senderismo, que debería durar toda una mañana, se redujo a apenas media hora. Además, los monitores parecían poco preparados y, en ocasiones, no sabían responder a nuestras preguntas ni coordinar al grupo de manera eficaz. Todo esto hizo que muchos alumnos se sintieran aburridos y desmotivados.
+`},
+
+    {content:`Por otro lado, las condiciones del alojamiento tampoco fueron adecuadas. Varias habitaciones tenían problemas de limpieza y el comedor no ofrecía opciones variadas, lo que fue especialmente difícil para quienes tienen dietas especiales. Creo que este tipo de detalles influyen mucho en el ambiente general del campamento.
+`},
+
+
+      {content:`Por estas razones, me gustaría proponer algunas mejoras. En mi opinión, sería útil que se planificaran las actividades con más precisión y que la escuela contratara monitores con más experiencia. Además, sería recomendable visitar previamente el alojamiento para asegurarse de que cumple unos estándares mínimos. Si se tuviera en cuenta la opinión de los alumnos antes de elegir el lugar, la experiencia sería mucho más positiva.
+`},
+
+
+        {content:`Espero que publiquéis esta carta para que la organización de futuros campamentos pueda mejorar.
+`},
+
+ {content:`Un saludo,\n
+[Firma]\n
+[Nombre y apellidos]`},
 
   ];
 
@@ -204,15 +224,12 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
-  </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
+Tema: Has vuelto insatisfecho/a de un campamento juvenil organizado por la escuela. Escribe una carta a la revista escolar en la que justifiques por qué consideras que el campamento fue un fracaso y propongas soluciones que mejoren la calidad de este tipo de viajes en el futuro.  </h3>
+              <p>TIPO : Carta Formal</p>
               <div className={styles.boxText}>
                 
                   <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
-  
+                 
                   <span 
                   className={`${styles.labelOutline}
     ${selectedObject === 1 ? styles.labelOutlineActive : ""}
@@ -223,9 +240,6 @@ const navigate = useNavigate();
 
                 </span>
                 <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
                   <span
                   className={`${styles.labelOutline}
     ${selectedObject === 2 ? styles.labelOutlineActive : ""}
@@ -235,11 +249,9 @@ const navigate = useNavigate();
                   {answers[2] || "_____________________________________________________"}
 
                 </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
-<p/>
-        <span
+                                <p/>
+
+         <span
                   className={`${styles.labelOutline}
     ${selectedObject === 3 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
@@ -248,12 +260,8 @@ con recursos tradicionales, habría aprendido mejor.
                   {answers[3] || "___________________________________________________________________"}
 
                 </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
+                <p/>
+ <p/>
                  <span
                   className={`${styles.labelOutline}
     ${selectedObject === 4 ? styles.labelOutlineActive : ""}
@@ -263,12 +271,59 @@ portantes, como la falta de satisfacción personal.
                   {answers[4] || "___________________________________________________________________"}
 
                 </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
         
+
+        <p/>
+ <p/>
+                 <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 5 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(4) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(5)}}
+                >
+                  {answers[5] || "___________________________________________________________________"}
+
+                </span>
+
+
+                <p/>
+ <p/>
+                 <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 6 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(5) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(6)}}
+                >
+                  {answers[6] || "___________________________________________________________________"}
+
+                </span>
+
+                <p/>
+ <p/>
+                 <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 7 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(6) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(7)}}
+                >
+                  {answers[7] || "___________________________________________________________________"}
+
+                </span>
+ <p/>
+
+                <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 8 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(7) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(8)}}
+                >
+                  {answers[8] || "___________________________________________________________________"}
+
+                </span>
+
+                
+
+                
               </div>
               </div>
         </div>
@@ -311,7 +366,7 @@ la educación online con métodos presenciales, para que se logre un
   answersShuffled.map((question) => {
 
         return (
-          <div className = {taskFinished ? styles.boxAnswerDisable : styles.boxAnswer}
+          <div className = {taskFinished ? styles.boxAnswerDisableNoSetSizeCartaFormal : styles.boxAnswerNoSetSizeCartaFormal}
           onClick = {() => handleWordClick(question.content)}>
             {question.content}
             </div>
@@ -324,7 +379,7 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 
       <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+      <button onClick={() => navigate("/CartaFormal3")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,7 +391,7 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
+         <button onClick={() => navigate("/CartaFormal5")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Next}</button>
       </div>
@@ -365,4 +420,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default CartaFormal4;

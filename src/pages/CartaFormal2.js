@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function CartaFormal2() {
 
 
    //Sounds
@@ -107,13 +107,37 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
+  {content: `[Ciudad], [fecha]`},
 
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
+  {content:`A la atención del Sr. Alcalde
+`},
 
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
+  {content:`Ayuntamiento de [Nombre de la ciudad]
+`},
 
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
+  {content:`[Dirección]`},
+
+    {content:`Estimado señor Alcalde:
+`},
+
+
+      {content:`Me dirijo a usted para expresar mi preocupación por la falta de espacios públicos seguros y activos en los que la juventud de nuestra ciudad pueda pasar su tiempo libre. El objetivo de esta carta es explicar cómo afecta esta situación a la vida cotidiana de los jóvenes y proponer una solución que pueda mejorar su bienestar.
+`},
+
+
+        {content:`En primer lugar, la ausencia de lugares adecuados tiene un impacto muy negativo en la actividad física y en la integración social. Según diversos estudios realizados por instituciones europeas, los jóvenes que no disponen de zonas de ocio tienden a pasar más tiempo en casa, lo que reduce su movimiento y sus contactos sociales. Además, cuando no existen espacios seguros, algunos adolescentes se ven obligados a reunirse en lugares inadecuados, como aparcamientos o portales, lo que a veces provoca conflictos con los vecinos. Sería deseable que se ofrecieran alternativas saludables y accesibles.
+`},
+
+ {content:`Por ello, querría proponer la creación de un pequeño parque juvenil multifuncional. Este espacio podría incluir una pista deportiva, bancos, iluminación y una zona para patinetes, siguiendo el modelo de ciudades como Valencia, donde proyectos similares han tenido excelentes resultados. Si fuera posible, nos gustaría que el Ayuntamiento apoyara esta iniciativa con financiación parcial y asesoramiento técnico, de modo que el proyecto se realizara de manera segura y profesional.
+`},
+
+ {content:`Agradezco de antemano su atención y quedo a su disposición para cualquier información adicional que fuera necesaria.
+`},
+
+{content:`Atentamente,
+`},
+
+{content:`[Firma]\n[Nombre y apellidos]\n[Datos de contacto]`}
 
   ];
 
@@ -204,15 +228,17 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
+Tema: En tu ciudad ha surgido un problema grave: faltan espacios públicos en los que la juventud pueda pasar el tiempo de forma activa y segura. Escribe una carta al alcalde de la ciudad en la que:
+
+expliques cómo la falta de tales lugares afecta la vida y el día a día de los jóvenes,
+
+propongas una solución a este problema, justificando tu idea.
   </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
+              <p>TIPO : Carta Formal</p>
               <div className={styles.boxText}>
                 
                   <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
-  
+                 
                   <span 
                   className={`${styles.labelOutline}
     ${selectedObject === 1 ? styles.labelOutlineActive : ""}
@@ -223,9 +249,6 @@ const navigate = useNavigate();
 
                 </span>
                 <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
                   <span
                   className={`${styles.labelOutline}
     ${selectedObject === 2 ? styles.labelOutlineActive : ""}
@@ -235,11 +258,9 @@ const navigate = useNavigate();
                   {answers[2] || "_____________________________________________________"}
 
                 </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
-<p/>
-        <span
+                                <p/>
+
+         <span
                   className={`${styles.labelOutline}
     ${selectedObject === 3 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
@@ -248,12 +269,8 @@ con recursos tradicionales, habría aprendido mejor.
                   {answers[3] || "___________________________________________________________________"}
 
                 </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
+                <p/>
+ <p/>
                  <span
                   className={`${styles.labelOutline}
     ${selectedObject === 4 ? styles.labelOutlineActive : ""}
@@ -263,12 +280,99 @@ portantes, como la falta de satisfacción personal.
                   {answers[4] || "___________________________________________________________________"}
 
                 </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
         
+
+        <p/>
+ <p/>
+                 <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 5 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(4) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(5)}}
+                >
+                  {answers[5] || "___________________________________________________________________"}
+
+                </span>
+
+
+                <p/>
+ <p/>
+                 <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 6 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(5) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(6)}}
+                >
+                  {answers[6] || "___________________________________________________________________"}
+
+                </span>
+
+                <p/>
+ <p/>
+                 <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 7 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(6) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(7)}}
+                >
+                  {answers[7] || "___________________________________________________________________"}
+
+                </span>
+ <p/>
+
+                <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 8 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(7) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(8)}}
+                >
+                  {answers[8] || "___________________________________________________________________"}
+
+                </span>
+ <p/>
+
+                <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 9 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(8) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(9)}}
+                >
+                  {answers[9] || "__________________________________________"}
+
+                </span>
+
+                <p/>
+                
+                
+                 <p/>
+                 
+
+                <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 10 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(9) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(10)}}
+                >
+                  {answers[10] || "_________________________"}
+
+                </span>
+
+                <p/>
+                 
+
+                <span
+                  className={`${styles.labelOutline}
+    ${selectedObject === 11 ? styles.labelOutlineActive : ""}
+    ${taskFinished && (checkIfLabelCorrect(10) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+                  onClick={() => {if (taskFinished) return;  setSelectedObject(11)}}
+                >
+                  {answers[11] || "_________________________"}
+
+                </span>
+
+                
+
+                
               </div>
               </div>
         </div>
@@ -311,7 +415,7 @@ la educación online con métodos presenciales, para que se logre un
   answersShuffled.map((question) => {
 
         return (
-          <div className = {taskFinished ? styles.boxAnswerDisable : styles.boxAnswer}
+          <div className = {taskFinished ? styles.boxAnswerDisableNoSetSizeCartaFormal : styles.boxAnswerNoSetSizeCartaFormal}
           onClick = {() => handleWordClick(question.content)}>
             {question.content}
             </div>
@@ -324,7 +428,7 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 
       <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+      <button onClick={() => navigate("/CartaFormal1")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,7 +440,7 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
+         <button onClick={() => navigate("/CartaFormal3")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Next}</button>
       </div>
@@ -365,4 +469,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default CartaFormal2;

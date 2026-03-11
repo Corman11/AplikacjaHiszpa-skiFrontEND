@@ -107,21 +107,13 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `El desarrollo del turismo tiene ventajas importantes,
-   pero también provoca ciertos problemas que deben tenerse 
-   en cuenta.`},
+  {content: `El desarrollo del turismo tiene ventajas importantes, pero también provoca ciertos problemas que deben tenerse en cuenta.`},
 
-  {content:`Además, el interés de los turistas por 
-conocer diferentes culturas favorece el intercambio cultural 
-y ayuda a valorar mejor las tradiciones locales.`},
+  {content:`Además, el interés de los turistas por conocer diferentes culturas favorece el intercambio cultural y ayuda a valorar mejor las tradiciones locales.`},
 
-  {content:`Sin embargo, no todo son aspectos positivos. El crecimiento 
-turístico también puede causar daños al medioambiente, como 
-la contaminación o la destrucción de espacios naturales.`},
+  {content:`Sin embargo, no todo son aspectos positivos. El crecimiento turístico también puede causar daños al medioambiente, como la contaminación o la destrucción de espacios naturales.`},
 
-  {content:` En conclusión, el desarrollo del turismo ofrece ventajas muy 
-importantes, sobre todo económicas, pero también genera 
-desventajas que no se pueden ignorar.`}
+  {content:` En conclusión, el desarrollo del turismo ofrece ventajas muy importantes, sobre todo económicas, pero también genera desventajas que no se pueden ignorar.`}
 
   ];
 
@@ -264,7 +256,7 @@ como el aumento del precio de la vivienda, la saturación del
  transporte público y la pérdida de la tranquilidad para los
   habitantes. A veces, el turismo masivo transforma tanto los
    lugares que estos pierden parte de su autenticidad.
-                 
+                 <p/>
                  <span
                   className={`${styles.labelOutline}
     ${selectedObject === 4 ? styles.labelOutlineActive : ""}

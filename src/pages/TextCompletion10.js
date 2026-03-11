@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function TextCompletion10() {
 
 
    //Sounds
@@ -107,13 +107,13 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
+  {content: `puede ser un buen regalo, siempre que se tengan en cuenta tanto las expectativas de quien lo compra como los deseos de quien lo recibe`},
 
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
+  {content:`Por ejemplo, muchos jóvenes prefieren vivir una aventura antes que recibir un objeto material. Además, este tipo de actividades permite demostrar cariño de una manera creativa, ofreciendo algo emocionante y fuera de lo común.`},
 
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
+  {content:`En algunos casos, un regalo de este tipo puede generar estrés o incomodidad. Por ejemplo, alguien con miedo a las alturas podría sentirse obligado a realizar algo que realmente no desea.`},
 
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
+  {content:` un salto en bungee o en paracaídas puede ser un regalo fantástico para quienes aman la aventura, pero solo si se adapta a la personalidad del destinatario`}
 
   ];
 
@@ -204,14 +204,19 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
+    Tema: Un vale para realizar un salto de puenting o un salto en paracaídas se ha convertido últimamente en un regalo de cumpleaños popular entre los jóvenes. ¿Es un regalo así una buena idea? Escribe un ensayo sobre este tema, considerándolo desde el punto de vista de la persona que compra el regalo y de la persona que lo recibe.
   </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
+              <p>TIPO : Texto de Opinión</p>
               <div className={styles.boxText}>
                 
                   <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
+                `En los últimos años, regalar un cupón
+ para realizar un salto en bungee un salto de puenting 
+  o un salto en paracaídas se ha convertido en una idea 
+  muy popular entre los jóvenes. Muchas personas consideran
+   que este tipo de regalo es original y emocionante, 
+   aunque otros lo ven como algo arriesgado. 
+   En mi opinión, 
   
                   <span 
                   className={`${styles.labelOutline}
@@ -223,52 +228,54 @@ const navigate = useNavigate();
 
                 </span>
                 <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
+         Desde el punto de vista de la persona que compra el regalo, 
+este tipo de experiencia resulta muy atractivo. En primer 
+lugar, se trata de un regalo diferente, que no se olvida
+ fácilmente  <p/>
                   <span
                   className={`${styles.labelOutline}
     ${selectedObject === 2 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(2)}}
                 >
-                  {answers[2] || "_____________________________________________________"}
+                  {answers[2] || "_____________________________________________"}
 
                 </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
-<p/>
+    Así, el regalo puede convertirse en un recuerdo
+   especial para toda la vida.
+Sin embargo, es imprescindible considerar también la 
+perspectiva de la persona que recibe el regalo. 
+Aunque a algunos les encantan las emociones fuertes, 
+no todos disfrutan de las alturas o de las actividades 
+extremas. <p/>
         <span
                   className={`${styles.labelOutline}
     ${selectedObject === 3 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() =>{if (taskFinished) return;  setSelectedObject(3)}}
                 >
-                  {answers[3] || "___________________________________________________________________"}
+                  {answers[3] || "_________________________________________________________"}
 
                 </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
+                
+ Por eso, es importante 
+ conocer bien a la persona antes de elegir este tipo de 
+ regalo.
+  <p/>
+En conclusión, 
+                
                  <span
                   className={`${styles.labelOutline}
     ${selectedObject === 4 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(4)}}
                 >
-                  {answers[4] || "___________________________________________________________________"}
+                  {answers[4] || "_____________________________________________________"}
 
                 </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
-        
+        Lo esencial es que el regalo provoque 
+alegría y no presión, para que la experiencia sea 
+realmente positiva.
               </div>
               </div>
         </div>
@@ -323,8 +330,8 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 </div>
 
-      <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+       <div className={styles.buttonsBottom}>
+      <button onClick={() => navigate("/TextCompletion6")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,9 +343,7 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
-          disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
-          >{ExerciseInstructions.exersize1Next}</button>
+        
       </div>
 
     </>
@@ -365,4 +370,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default TextCompletion10;

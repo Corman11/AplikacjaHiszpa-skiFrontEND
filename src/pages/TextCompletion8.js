@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function TextCompletion8() {
 
 
    //Sounds
@@ -107,13 +107,13 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
+  {content: `tener un perro en un bloque es perfectamente posible, siempre que el dueño sea responsable y cuide tanto del animal como de la convivencia con los demás`},
 
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
+  {content:`Por ejemplo, muchas familias que viven en pisos sacan sus perros varias veces al día, los llevan a parques especiales para que jueguen y les proporcionan entretenimiento dentro de casa.`},
 
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
+  {content:`Sin embargo, también existen numerosos ejemplos de dueños que entrenan bien a sus animales, controlan el ruido y respetan las normas del edificio. Gracias a eso, la convivencia resulta tranquila y no hay motivos para quejas.`},
 
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
+  {content:` vivir en un bloque no debería ser un obstáculo para tener un perro. Lo fundamental no es el tipo de vivienda, sino el comportamiento del dueño.`}
 
   ];
 
@@ -204,14 +204,18 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
+    Tema: Algunos consideran que las personas que viven en bloques de pisos no deberían tener perros. Escribe un ensayo en el que presentes tu opinión sobre este tema, refiriéndote a garantizar las condiciones adecuadas para los animales y a la relación de los dueños de perros con los vecinos.
   </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
+              <p>TIPO : Texto de Opinión</p>
               <div className={styles.boxText}>
                 
                   <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
+                 Algunas personas consideran que quienes 
+  viven en bloques de pisos no deberían tener perros. 
+  Según ellas, este tipo de vivienda no ofrece las 
+  condiciones adecuadas para los animales y, además,
+   puede generar conflictos entre vecinos. 
+   En mi opinión, 
   
                   <span 
                   className={`${styles.labelOutline}
@@ -223,52 +227,54 @@ const navigate = useNavigate();
 
                 </span>
                 <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
+        En primer lugar, es cierto que un perro necesita espacio, 
+ejercicio y atención, pero esto no depende tanto del tamaño 
+de la vivienda como del compromiso del propietario.   <p/>
                   <span
                   className={`${styles.labelOutline}
     ${selectedObject === 2 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(2)}}
                 >
-                  {answers[2] || "_____________________________________________________"}
+                  {answers[2] || "_____________________________________________"}
 
                 </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
-<p/>
+       Por lo tanto, si 
+  los dueños ofrecen las condiciones necesarias, un perro
+   puede vivir feliz incluso en un piso pequeño. 
+   De hecho, en muchas ciudades europeas esta es la 
+   situación más habitual.
+Por otra parte, la relación con los vecinos es otro
+ aspecto importante. Un perro mal educado, que ladra
+  constantemente o ensucia las zonas comunes, puede 
+  causar problemas. <p/>
         <span
                   className={`${styles.labelOutline}
     ${selectedObject === 3 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() =>{if (taskFinished) return;  setSelectedObject(3)}}
                 >
-                  {answers[3] || "___________________________________________________________________"}
+                  {answers[3] || "_________________________________________________________"}
 
                 </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
+                
+En realidad, los conflictos 
+   suelen aparecer no por el perro, sino por la falta de
+    responsabilidad del propietario.
+En conclusión, 
+                 
                  <span
                   className={`${styles.labelOutline}
     ${selectedObject === 4 ? styles.labelOutlineActive : ""}
     ${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
                   onClick={() => {if (taskFinished) return;  setSelectedObject(4)}}
                 >
-                  {answers[4] || "___________________________________________________________________"}
+                  {answers[4] || "_____________________________________________________"}
 
                 </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
-        
+        Con suficiente dedicación y respeto hacia los demás, 
+ es posible garantizar el bienestar del animal y 
+ mantener buenas relaciones con los vecinos. 
               </div>
               </div>
         </div>
@@ -323,8 +329,8 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 </div>
 
-      <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+       <div className={styles.buttonsBottom}>
+      <button onClick={() => navigate("/TextCompletion7")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,7 +342,7 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
+        <button onClick={() => navigate("/TextCompletion9")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Next}</button>
       </div>
@@ -365,4 +371,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default TextCompletion8;

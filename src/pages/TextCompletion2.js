@@ -107,18 +107,13 @@ const [answers, setAnswers] = useState({
 
 
 const correctAnsers = [
-  {content: `Esta tendencia genera un debate interesante, ya que presenta tanto beneficios 
-   como inconvenientes. Existen tantas ventajas como desventajas en este tipo de decisiones.`},
+  {content: `Esta tendencia genera un debate interesante, ya que presenta tanto beneficios como inconvenientes. Existen tantas ventajas como desventajas en este tipo de decisiones.`},
 
-  {content:`Este dato demuestra que seguir las necesidades del mercado puede garantizar seguridad
- económica, algo muy valorado en la sociedad actual..`},
+  {content:`Este dato demuestra que seguir las necesidades del mercado puede garantizar seguridad económica, algo muy valorado en la sociedad actual. `},
 
-  {content:`Si hubiera seguido 
-sus verdaderas pasiones, quizá habría sido más feliz, aunque con menos estabilidad. 
-Que los jóvenes prioricen únicamente el mercado hace que se pierda la motivación y la creatividad.`},
+  {content:`Si hubiera seguido sus verdaderas pasiones, quizá habría sido más feliz, aunque con menos estabilidad. Que los jóvenes prioricen únicamente el mercado hace que se pierda la motivación y la creatividad.`},
 
-  {content:`Por eso, conviene que cada estudiante reflexione antes de decidir,
-  para que su elección no dependa solo del mercado, sino también de sus intereses.`}
+  {content:`Por eso, conviene que cada estudiante reflexione antes de decidir, para que su elección no dependa solo del mercado, sino también de sus intereses.`}
 
   ];
 

@@ -31,7 +31,7 @@ const questionsText = {
 
 
 
-function TextCompletion3() {
+function TextCompletion7conector() {
 
 
    //Sounds
@@ -105,41 +105,21 @@ const [answers, setAnswers] = useState({
   2: "",
 });
 
-
 const correctAnsers = [
-  {content: `Esta modalidad genera tanto beneficios como inconvenientes, lo que provoca un debate constante. Hay tantas ventajas como desventajas en la enseñanza virtual.`},
-
-  {content:`Además, esta modalidad reduce costes y facilita el aprendizaje desde cualquier lugar.`},
-
-  {content:`Además, la falta de interacción personal limita el desarrollo social y la motivación.`},
-
-  {content:`En conclusión, la educación virtual ofrece tantas ventajas, como riesgos.`}
-
-  ];
-
-  const texto= `Cada vez más jóvenes eligen su carrera 
-  universitaria pensando en las exigencias del mercado laboral.
-<Esta tendencia genera un debate interesante, ya que presenta tanto beneficios 
-   como inconvenientes. Existen tantas ventajas como desventajas en este tipo de decisiones.>
-
-Por un lado, elegir una carrera con alta demanda laboral aumenta las posibilidades 
-de conseguir empleo estable y bien remunerado. Según un informe del Ministerio de Educación, 
-los graduados en ingeniería y tecnología tienen tasas de inserción superiores al 80 %. 
-
-<Este dato demuestra que seguir las necesidades del mercado puede garantizar seguridad
- económica, algo muy valorado en la sociedad actual.>
-
-Por otro lado, esta elección puede provocar frustración si la persona no siente interés 
-por la profesión. Imaginemos a alguien que estudió informática solo por las oportunidades 
-laborales, pero que siempre había soñado con ser profesor de historia. <Si hubiera seguido 
-sus verdaderas pasiones, quizá habría sido más feliz, aunque con menos estabilidad. 
-Que los jóvenes prioricen únicamente el mercado hace que se pierda la motivación y la creatividad.>
-
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas importantes, como la falta de satisfacción personal. 
- <Por eso, conviene que cada estudiante reflexione antes de decidir,
-  para que su elección no dependa solo del mercado, sino también de sus intereses.>`;
-
+  {content: `pero`},
+  {content: `En mi opinión`},
+  {content: `aunque`},
+  {content: `en cuanto a`},
+  {content: `Por ejemplo`},
+  {content: `Además`},
+  {content: `Sin embargo`},
+  {content: `Por otra parte`},
+  {content: `Por un lado`},
+  {content: `Por otro lado`},
+  {content: `Por ejemplo`},
+  {content: `En conclusión`},
+  {content: `pero`}
+];
 
 
 
@@ -204,73 +184,172 @@ const navigate = useNavigate();
       <PlayRender result={result} />
                           <div className={styles.textWrapper}>
               <h3 className={styles.boxTitle}>
-    Tema: Presenta ventajas y desventajas de la  educación online.
-  </h3>
-              <p>TIPO : VENTAJAS Y DESVENTAJAS</p>
-              <div className={styles.boxText}>
-                
-                  <div className={styles.labelText}>
-                En la actualidad, la educación online se
-   ha convertido en una alternativa cada vez más común.
-  
-                  <span 
-                  className={`${styles.labelOutline}
-    ${selectedObject === 1 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(0) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() => {if (taskFinished) return;  setSelectedObject(1)}}
-                >
-                  {answers[1] || "________________________________________________"}
-
-                </span>
-                <p/>
-         Por un lado, la educación en línea ofrece flexibilidad y acceso.
- Según la UNESCO, las plataformas digitales permitieron que millones de
-  estudiantes continuaran sus estudios durante la pandemia del covid-19. <p/>
-                  <span
-                  className={`${styles.labelOutline}
-    ${selectedObject === 2 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() => {if (taskFinished) return;  setSelectedObject(2)}}
-                >
-                  {answers[2] || "_____________________________________________________"}
-
-                </span>
-       Por otro lado, la educación online puede afectar la calidad educativa. 
-Imaginemos que un alumno no tuviera conexión estable: si hubiera contado 
-con recursos tradicionales, habría aprendido mejor. 
+    Tema: En muchos países, cada vez más personas abandonan la idea de comprar una vivienda para optar por el alquiler. ¿Es una buena idea? Escribe un ensayo en el que expreses tu opinión sobre este fenómeno, refiriéndote a los siguientes aspectos:
 <p/>
-        <span
-                  className={`${styles.labelOutline}
-    ${selectedObject === 3 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() =>{if (taskFinished) return;  setSelectedObject(3)}}
-                >
-                  {answers[3] || "___________________________________________________________________"}
+<li>los vínculos sociales</li>
 
-                </span>
-                {/* <p/>
-En resumen, esta tendencia tiene ventajas claras, como la estabilidad económica,
- pero también desventajas im
-portantes, como la falta de satisfacción personal. 
-                 <p/> */}
-                 <p/>
-                 <span
-                  className={`${styles.labelOutline}
-    ${selectedObject === 4 ? styles.labelOutlineActive : ""}
-    ${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
-                  onClick={() => {if (taskFinished) return;  setSelectedObject(4)}}
-                >
-                  {answers[4] || "___________________________________________________________________"}
+<li>las finanzas</li>
+  </h3>
+              <p>TIPO : Texto de Opinión</p>
+              <div className={styles.boxText}>
 
-                </span>
-                 
-Por eso, conviene que las instituciones combinen 
-la educación online con métodos presenciales, para que se logre un
- equilibrio entre comodidad y calidad. 
-                 
-        
-              </div>
-              </div>
+En muchos países, cada vez más personas renuncian a la idea de comprar una vivienda 
+y prefieren alquilarla. Este cambio se debe a razones económicas,
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 1 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(0) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(1)}}
+>
+{answers[1] || "____________"}
+</span>
+
+también a un estilo de vida más flexible.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 2 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(1) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(2)}}
+>
+{answers[2] || "________________"}
+</span>
+
+, decidir alquilar un piso puede ser una buena solución para muchos,
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 3 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(2) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(3)}}
+>
+{answers[3] || "____________"}
+</span>
+
+también tiene ciertos inconvenientes que deben considerarse con cuidado.
+
+<p/>
+
+Para empezar,
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 4 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(3) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(4)}}
+>
+{answers[4] || "____________"}
+</span>
+
+las relaciones sociales, vivir de alquiler ofrece una mayor movilidad.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 5 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(4) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(5)}}
+>
+{answers[5] || "____________"}
+</span>
+
+, un joven que encuentra trabajo en otra ciudad puede mudarse rápidamente sin tener que vender una propiedad.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 6 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(5) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(6)}}
+>
+{answers[6] || "____________"}
+</span>
+
+, alquilar permite conocer diferentes barrios y adaptarse a distintos entornos.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 7 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(6) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(7)}}
+>
+{answers[7] || "____________"}
+</span>
+
+también puede dificultar crear vínculos fuertes con los vecinos.
+
+<p/>
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 8 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(7) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(8)}}
+>
+{answers[8] || "________________"}
+</span>
+
+, el aspecto económico es fundamental.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 9 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(8) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(9)}}
+>
+{answers[9] || "____________"}
+</span>
+
+, alquilar evita los enormes gastos iniciales que supone comprar una vivienda.
+
+Esto resulta especialmente útil para quienes empiezan su vida profesional.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 10 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(9) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(10)}}
+>
+{answers[10] || "____________"}
+</span>
+
+, a largo plazo pagar un alquiler puede ser menos rentable.
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 11 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(10) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(11)}}
+>
+{answers[11] || "____________"}
+</span>
+
+, una persona que pague durante años una cuota elevada quizá gaste más dinero.
+
+<p/>
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 12 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(11) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(12)}}
+>
+{answers[12] || "________________"}
+</span>
+
+, alquilar un piso puede ser una opción práctica y flexible
+
+<span
+className={`${styles.labelOutline}
+${selectedObject === 13 ? styles.labelOutlineActive : ""}
+${taskFinished && (checkIfLabelCorrect(12) ? styles.labelOutlineSet : styles.labelOutlineWrong)}`}
+onClick={() => {if (taskFinished) return; setSelectedObject(13)}}
+>
+{answers[13] || "____________"}
+</span>
+
+no siempre es la más ventajosa desde el punto de vista económico o social.
+
+</div>
         </div>
         </div>
         
@@ -311,7 +390,7 @@ la educación online con métodos presenciales, para que se logre un
   answersShuffled.map((question) => {
 
         return (
-          <div className = {taskFinished ? styles.boxAnswerDisable : styles.boxAnswer}
+          <div className = {taskFinished ? styles.boxAnswerDisableNoSetSize : styles.boxAnswerNoSetSize}
           onClick = {() => handleWordClick(question.content)}>
             {question.content}
             </div>
@@ -324,7 +403,7 @@ la educación online con métodos presenciales, para que se logre un
 </div>
 
       <div className={styles.buttonsBottom}>
-      <button onClick={() => navigate("/TextCompletion2")}
+      <button onClick={() => navigate("/TextCompletion6conector")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Previous}</button>
 
@@ -336,7 +415,7 @@ la educación online con métodos presenciales, para que se logre un
         {taskFinished === true && <h1>Masz poprawnie {checkAnsers()}/{correctAnsers.length} </h1>}
         {result === false && <h1>Nie wszystko dobrze </h1>}
 
-         <button onClick={() => navigate("/TextCompletion4")}
+        <button onClick={() => navigate("/TextCompletion8conector")}
           disabled={!(taskFinished && checkAnsers() === correctAnsers.length)}
           >{ExerciseInstructions.exersize1Next}</button>
       </div>
@@ -365,4 +444,4 @@ la educación online con métodos presenciales, para que se logre un
 
 
 
-export default TextCompletion3;
+export default TextCompletion7conector;
